@@ -14,9 +14,9 @@ def check(dirs: List[Path]) -> bool:
 
     for dir in dirs:
          # 修改路径
-        if dir == Path('./assets/resource/'):
-            dir = Path('./assets/resource/base/')
-            
+         #if dir == Path('./assets/resource/'):
+            #dir = Path('./assets/resource/base/')
+
         print(f"Checking {dir}...")
         status = resource.post_path(dir).wait().status()
         if not status.succeeded():
