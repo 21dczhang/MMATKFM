@@ -72,6 +72,7 @@ jobs:
           name: update
           path: "update"
 
+
   gui:
     needs: meta
     runs-on: ubuntu-latest
@@ -79,30 +80,30 @@ jobs:
       fail-fast: false
       
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
         with:
           submodules: true
-          
       - name: Download Latest MFAWPF  
-        uses: robinraju/release-downloader@v1  
+        uses: robinraju/release-downloader@v1.8  
         with:  
-             repository: SweetSmellFox/MFAWPF  
-             filename: MFAWPF*
-             latest: true  
-             out-file-path: gui  
-             extract: true  
-  
+              repository: SweetSmellFox/MFAWPF  
+              latest: true  
+              out-file-path: gui  
+              extract: true  
+      ##在下面更改项目名称
       - name: gui resources          
         shell: bash
         run: |  
-           rm -f ./gui/*.zip
-           cp -r ./assets/resource/* ./gui/Resource/
-           jq --arg version_name "MAAAndroidTest" --arg url "git@github.com:21dczhang/MMAAndroidTest.git" --arg version ${{ needs.meta.outputs.tag }} '. + {"name": $version_name, "url": $url,"version": $version}' ./assets/interface.json > ./gui/interface.json
-
-      - uses: actions/upload-artifact@v4
+            rm -f ./gui/*.zip
+            cp -r ./assets/resource/* ./gui/Resource/
+            jq --arg version_name "MCCA" --arg version ${{ needs.meta.outputs.tag }} '. + {"version": {"name": $version_name, "version": $version}}' ./assets/interface.json > ./gui/interface.json
+          
+      - uses: actions/upload-artifact@v3
         with:
-          name: MAAxxx-win-x86_64-with-gui
+          name: MAAAndroidTest-win-x86_64-with-gui
           path: "gui"
+
+
 
   windows:
     needs: meta
