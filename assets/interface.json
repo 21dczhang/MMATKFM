@@ -30,8 +30,8 @@
     ],
     "task": [
         {
-            "name": "普通任务",
-            "entry": "MyTask1"
+            "name": "点击游戏",
+            "entry": "点击存储"
         },
         {
             "name": "选项任务",
