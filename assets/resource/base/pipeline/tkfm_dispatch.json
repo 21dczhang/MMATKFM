@@ -1,0 +1,404 @@
+{
+    "看板界面": {
+        "recognition": "DirectHit",
+        "action": "Key",
+        "key": [
+            4
+        ],
+        "next": [
+            "返回标题提示",
+            "看板界面"
+        ],
+        "timeout": 5000
+    },
+    "返回标题提示": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "取消",
+        "next": [
+            "点击派遣三角形"
+        ],
+        "timeout": 5000
+    },
+    "退出派遣小界面": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            297,
+            453,
+            121,
+            88
+        ],
+        "timeout": 5000
+    },
+    "点击派遣三角形": {
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Dispatch\\派遣三角形.png",
+        "action": "Click",
+        "timeout": 5000,
+        "post_delay": 500,
+        "next": [
+            "识别派遣是否完成",
+            "三角形后闲置中"
+        ],
+        "on_error": [
+            "退出派遣小界面"
+        ]
+    },
+    "识别派遣是否完成": {
+        "recognition": "OCR",
+        "expected": "派遣完成",
+        "action": "Click",
+        "next": [
+            "点击队伍归来"
+        ],
+        "on_error": []
+    },
+    "三角形后闲置中": {
+        "recognition": "OCR",
+        "expected": "闲置中",
+        "action": "Click",
+        "next": [
+            "闲置中"
+        ]
+    },
+    "点击队伍归来": {
+        "recognition": "OCR",
+        "expected": "队伍归来",
+        "action": "Click",
+        "next": [
+            "点击关闭"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "闲置中",
+            "Nothing"
+        ]
+    },
+    "闲置中": {
+        "recognition": "OCR",
+        "expected": "闲置中",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "系统没有选择任务_识别锁型",
+            "系统已经选择任务_直接点击出发",
+            "闲置中"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "退出派遣界面"
+        ]
+    },
+    "系统已经选择任务_直接点击出发": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "出发",
+        "next": [
+            "闲置中"
+        ],
+        "on_error": [
+            "退出派遣界面"
+        ],
+        "timeout": 5000
+    },
+    "系统没有选择任务_识别锁型": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Dispatch\\锁型.png",
+        "pre_delay": 500,
+        "roi": [
+            105,
+            920,
+            512,
+            149
+        ],
+        "next": [
+            "系统没有选择任务_随机填充任务"
+        ],
+        "on_error": [
+            "闲置中"
+        ]
+    },
+    "系统没有选择任务_随机填充任务": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "LV.",
+        "roi": [
+            142,
+            217,
+            116,
+            556
+        ],
+        "next": [
+            "点击empty"
+        ],
+        "on_error": [
+            "向下滑动"
+        ]
+    },
+    "点击empty": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "EMPTY",
+        "next": [
+            "点击条件推荐"
+        ]
+    },
+    "点击条件推荐": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "条件推荐",
+        "next": [
+            "无推荐角色",
+            "点击人员补充"
+        ]
+    },
+    "无推荐角色": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "确定",
+        "next": [
+            "点击人员补充"
+        ]
+    },
+    "点击人员补充": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "人员补充",
+        "post_delay": 500,
+        "next": [
+            "点击返回图标"
+        ]
+    },
+    "点击返回图标": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Base\\backup.png",
+        "next": [
+            "点击出发"
+        ]
+    },
+    "点击出发": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "出发",
+        "next": [
+            "闲置中"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "退出派遣界面"
+        ]
+    },
+    "向上滑动": {
+        "begin": [
+            596,
+            244,
+            1,
+            1
+        ],
+        "end": [
+            598,
+            736,
+            1,
+            1
+        ],
+        "action": "Swipe",
+        "pre_delay": 500,
+        "post_delay": 500,
+        "next": [
+            "系统没有选择任务_随机填充任务"
+        ]
+    },
+    "向下滑动": {
+        "begin": [
+            598,
+            736,
+            1,
+            1
+        ],
+        "end": [
+            596,
+            244,
+            1,
+            1
+        ],
+        "action": "Swipe",
+        "pre_delay": 500,
+        "post_delay": 500,
+        "next": [
+            "系统没有选择任务_随机填充任务"
+        ]
+    },
+    "点击关闭": {
+        "recognition": "OCR",
+        "expected": "关闭",
+        "action": "Click",
+        "timeout": 5000,
+        "next": [
+            "点击队伍归来"
+        ],
+        "on_error": [
+            "自动派遣"
+        ]
+    },
+    "派遣房间1_swip": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": [
+            628,
+            290,
+            1,
+            1
+        ],
+        "end": [
+            628,
+            500,
+            1,
+            1
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000,
+        "next": []
+    },
+    "派遣房间2_swip": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": [
+            628,
+            515,
+            1,
+            1
+        ],
+        "end": [
+            627,
+            718,
+            1,
+            1
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000,
+        "next": []
+    },
+    "派遣房间3_swip": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": [
+            628,
+            553,
+            1,
+            1
+        ],
+        "end": [
+            627,
+            289,
+            1,
+            1
+        ],
+        "next": [
+            "派遣房间3"
+        ]
+    },
+    "派遣房间1": {
+        "recognition": "OCR",
+        "expected": "LV.",
+        "roi_offset": [
+            132,
+            210,
+            128,
+            566
+        ],
+        "action": "Click",
+        "index_doc": "Set in code.",
+        "next": [
+            "是否已经自动填充人员"
+        ]
+    },
+    "是否已经自动填充人员": {
+        "recognition": "OCR",
+        "expected": "EMPTY",
+        "action": "Click",
+        "next": [
+            "没有填充人员_点击填充"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "已经填充人员"
+        ]
+    },
+    "已经填充人员": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "出发",
+        "next": [
+            "闲置中"
+        ],
+        "on_error": [
+            "退出派遣界面"
+        ]
+    },
+    "没有填充人员_点击填充": {
+        "recognition": "OCR",
+        "expected": "条件推荐",
+        "action": "Click",
+        "next": [
+            "人员补充"
+        ]
+    },
+    "人员补充": {
+        "recognition": "OCR",
+        "expected": "人员补充",
+        "action": "Click",
+        "next": []
+    },
+    "派遣房间2": {
+        "recognition": "OCR",
+        "expected": "LV.",
+        "roi_offset": [
+            132,
+            210,
+            128,
+            566
+        ],
+        "action": "Click",
+        "index_doc": "Set in code.",
+        "next": []
+    },
+    "派遣房间3": {
+        "recognition": "OCR",
+        "expected": "LV.",
+        "roi_offset": [
+            132,
+            210,
+            128,
+            566
+        ],
+        "action": "Click",
+        "index_doc": "Set in code.",
+        "next": []
+    },
+    "自动派遣": {},
+    "退出派遣界面": {
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Base\\backup.png",
+        "action": "Click",
+        "next": [
+            "Nothing"
+        ]
+    },
+    "派遣队伍": {
+        "recognition": "OCR",
+        "expected": "闲置中",
+        "action": "Click",
+        "next": [
+            "点击派遣三角形"
+        ]
+    },
+    "Nothing": {},
+    "小测试": {
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Dispatch\\宝藏库.png",
+        "action": "Click"
+    }
+}

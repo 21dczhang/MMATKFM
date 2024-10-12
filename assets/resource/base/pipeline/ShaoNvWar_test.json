@@ -1,0 +1,32 @@
+{
+    "点击继续": {
+        "recognition": "TemplateMatch",
+        "template": "ShaonvZhangZhen\\继续战斗.png",
+        "action": "Click",
+        "next": [
+            "点击继续",
+            "点击挑战",
+            "点击跳过"
+        ]
+    },
+    "点击挑战": {
+        "recognition": "TemplateMatch",
+        "template": "ShaonvZhangZhen\\挑战.png",
+        "action": "Click",
+        "next": [
+            "点击继续",
+            "点击挑战",
+            "点击跳过"
+        ]
+    },
+    "点击跳过": {
+        "recognition": "TemplateMatch",
+        "template": "ShaonvZhangZhen\\跳过.png",
+        "action": "Click",
+        "next": [
+            "点击继续",
+            "点击挑战",
+            "点击跳过"
+        ]
+    }
+}

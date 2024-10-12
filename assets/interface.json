@@ -31,7 +31,7 @@
     "task": [
         {
             "name": "运行布魔",
-            "entry": "StartUpByOption",
+            "entry": "tkfm_StartUp_StartUpByOption",
             "option": [
                 "账号选择"
             ]
@@ -43,7 +43,7 @@
                 {
                     "name": "账号1",
                     "pipeline_override": {
-                        "点击图标": {
+                        "tkfm_StartUp_点击图标": {
                             "index": 0
                         }
                     }
@@ -51,7 +51,7 @@
                 {
                     "name": "账号2",
                     "pipeline_override": {
-                        "点击图标": {
+                        "tkfm_StartUp_点击图标": {
                             "index": 1
                         }
                     }
@@ -59,7 +59,7 @@
                 {
                     "name": "账号3",
                     "pipeline_override": {
-                        "点击图标": {
+                        "tkfm_StartUp_点击图标": {
                             "index": 2
                         }
                     }
@@ -67,7 +67,7 @@
                 {
                     "name": "账号4",
                     "pipeline_override": {
-                        "点击图标": {
+                        "tkfm_StartUp_点击图标": {
                             "index": 3
                         }
                     }

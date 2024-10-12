@@ -1,0 +1,43 @@
+{
+    "领取好友体力": {
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Friend\\daosanjiao.png",
+        "action": "Click",
+        "roi": [
+            0,
+            0,
+            205,
+            300
+        ],
+        "next": [
+            "好友清单"
+        ]
+    },
+    "好友清单": {
+        "recognition": "OCR",
+        "expected": "好友清单",
+        "action": "Click",
+        "roi": [
+            80,
+            170,
+            600,
+            140
+        ],
+        "next": [
+            "一键领取"
+        ]
+    },
+    "一键领取": {
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Friend\\yijianlingqu.png",
+        "action": "Click",
+        "next": [
+            "关闭好友界面"
+        ]
+    },
+    "关闭好友界面": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Base\\X.png"
+    }
+}
