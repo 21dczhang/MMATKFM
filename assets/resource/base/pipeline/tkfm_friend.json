@@ -1,5 +1,5 @@
 {
-    "领取好友体力": {
+    "tkfm_friend_领取好友体力": {
         "recognition": "TemplateMatch",
         "template": "tkfm\\Friend\\daosanjiao.png",
         "action": "Click",
@@ -9,14 +9,16 @@
             205,
             300
         ],
+        "post_delay": 500,
         "next": [
-            "好友清单"
+            "tkfm_friend_好友清单"
         ]
     },
-    "好友清单": {
+    "tkfm_friend_好友清单": {
         "recognition": "OCR",
         "expected": "好友清单",
         "action": "Click",
+        "post_delay": 500,
         "roi": [
             80,
             170,
@@ -24,18 +26,19 @@
             140
         ],
         "next": [
-            "一键领取"
+            "tkfm_friend_一键领取"
         ]
     },
-    "一键领取": {
+    "tkfm_friend_一键领取": {
         "recognition": "TemplateMatch",
         "template": "tkfm\\Friend\\yijianlingqu.png",
+        "post_delay": 500,
         "action": "Click",
         "next": [
-            "关闭好友界面"
+            "tkfm_friend_关闭好友界面"
         ]
     },
-    "关闭好友界面": {
+    "tkfm_friend_关闭好友界面": {
         "action": "Click",
         "recognition": "TemplateMatch",
         "template": "tkfm\\Base\\X.png"
