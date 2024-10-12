@@ -37,6 +37,12 @@
         "action": "Click",
         "timeout": 5000,
         "post_delay": 500,
+        "roi": [
+            0,
+            437,
+            89,
+            363
+        ],
         "next": [
             "识别派遣是否完成",
             "三角形后闲置中"
@@ -243,78 +249,6 @@
             "自动派遣"
         ]
     },
-    "派遣房间1_swip": {
-        "recognition": "DirectHit",
-        "action": "Swipe",
-        "begin": [
-            628,
-            290,
-            1,
-            1
-        ],
-        "end": [
-            628,
-            500,
-            1,
-            1
-        ],
-        "pre_delay": 500,
-        "post_delay": 1000,
-        "next": []
-    },
-    "派遣房间2_swip": {
-        "recognition": "DirectHit",
-        "action": "Swipe",
-        "begin": [
-            628,
-            515,
-            1,
-            1
-        ],
-        "end": [
-            627,
-            718,
-            1,
-            1
-        ],
-        "pre_delay": 500,
-        "post_delay": 1000,
-        "next": []
-    },
-    "派遣房间3_swip": {
-        "recognition": "DirectHit",
-        "action": "Swipe",
-        "begin": [
-            628,
-            553,
-            1,
-            1
-        ],
-        "end": [
-            627,
-            289,
-            1,
-            1
-        ],
-        "next": [
-            "派遣房间3"
-        ]
-    },
-    "派遣房间1": {
-        "recognition": "OCR",
-        "expected": "LV.",
-        "roi_offset": [
-            132,
-            210,
-            128,
-            566
-        ],
-        "action": "Click",
-        "index_doc": "Set in code.",
-        "next": [
-            "是否已经自动填充人员"
-        ]
-    },
     "是否已经自动填充人员": {
         "recognition": "OCR",
         "expected": "EMPTY",
@@ -352,33 +286,6 @@
         "action": "Click",
         "next": []
     },
-    "派遣房间2": {
-        "recognition": "OCR",
-        "expected": "LV.",
-        "roi_offset": [
-            132,
-            210,
-            128,
-            566
-        ],
-        "action": "Click",
-        "index_doc": "Set in code.",
-        "next": []
-    },
-    "派遣房间3": {
-        "recognition": "OCR",
-        "expected": "LV.",
-        "roi_offset": [
-            132,
-            210,
-            128,
-            566
-        ],
-        "action": "Click",
-        "index_doc": "Set in code.",
-        "next": []
-    },
-    "自动派遣": {},
     "退出派遣界面": {
         "recognition": "TemplateMatch",
         "template": "tkfm\\Base\\backup.png",
@@ -396,9 +303,9 @@
         ]
     },
     "Nothing": {},
-    "小测试": {
-        "recognition": "TemplateMatch",
-        "template": "tkfm\\Dispatch\\宝藏库.png",
-        "action": "Click"
+    "自动派遣": {
+        "next": [
+            "看板界面"
+        ]
     }
 }

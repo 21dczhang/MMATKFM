@@ -52,6 +52,7 @@
         ],
         "action": "Click",
         "index_doc": "Set in code.",
+        "timeout": 50000,
         "next": [
             "tkfm_StartUp_SKIP",
             "tkfm_StartUp_点击图标"
@@ -67,6 +68,7 @@
             65
         ],
         "action": "Click",
+        "timeout": 100000,
         "next": [
             "tkfm_StartUp_关闭登入公布栏",
             "tkfm_StartUp_TAP_TO_START",
@@ -98,7 +100,8 @@
             "tkfm_StartUp_关闭签到后公布栏",
             "tkfm_StartUp_点击返回"
         ],
-        "interrupt": [
+        "timeout": 100000,
+        "on_error": [
             "tkfm_StartUp_TAP_TO_START"
         ]
     },
@@ -130,9 +133,17 @@
         ],
         "timeout": 10000,
         "next": [
-            "tkfm_StartUp_点击返回"
+            "tkfm_StartUp_点击返回",
+            "tkfm_StartUp_是否主界面"
         ],
         "on_error": [
+            "tkfm_StartUp_Nothoing"
+        ]
+    },
+    "tkfm_StartUp_是否主界面": {
+        "recognition": "OCR",
+        "expected": "召唤",
+        "next": [
             "tkfm_StartUp_Nothoing"
         ]
     },

@@ -1,4 +1,5 @@
 {
+    "version": "v1.5.1",
     "controller": [
         {
             "name": "安卓端",
@@ -35,6 +36,10 @@
             "option": [
                 "账号选择"
             ]
+        },
+        {
+            "name": "自动派遣",
+            "entry": "自动派遣"
         }
     ],
     "option": {
