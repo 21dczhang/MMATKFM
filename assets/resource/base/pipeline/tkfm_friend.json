@@ -1,4 +1,27 @@
 {
+    "tkfm_friend_看板界面": {
+        "recognition": "DirectHit",
+        "action": "Key",
+        "key": [
+            4
+        ],
+        "next": [
+            "tkfm_friend_返回标题提示",
+            "tkfm_friend_看板界面"
+        ],
+        "timeout": 5000,
+        "post_delay": 1500
+    },
+    "tkfm_friend_返回标题提示": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "取消",
+        "next": [
+            "tkfm_friend_领取好友体力"
+        ],
+        "timeout": 5000,
+        "post_delay": 1500
+    },
     "tkfm_friend_领取好友体力": {
         "recognition": "TemplateMatch",
         "template": "tkfm\\Friend\\daosanjiao.png",
@@ -9,7 +32,7 @@
             205,
             300
         ],
-        "post_delay": 500,
+        "post_delay": 1500,
         "next": [
             "tkfm_friend_好友清单"
         ]
@@ -18,7 +41,7 @@
         "recognition": "OCR",
         "expected": "好友清单",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "roi": [
             80,
             170,
@@ -32,7 +55,7 @@
     "tkfm_friend_一键领取": {
         "recognition": "TemplateMatch",
         "template": "tkfm\\Friend\\yijianlingqu.png",
-        "post_delay": 500,
+        "post_delay": 1500,
         "action": "Click",
         "next": [
             "tkfm_friend_关闭好友界面"
@@ -41,6 +64,13 @@
     "tkfm_friend_关闭好友界面": {
         "action": "Click",
         "recognition": "TemplateMatch",
-        "template": "tkfm\\Base\\X.png"
+        "template": "tkfm\\Base\\X.png",
+        "post_delay": 1500
+    },
+    "tkfm_friend_自动领取好友体力": {
+        "next": [
+            "tkfm_friend_看板界面"
+        ],
+        "post_delay": 1500
     }
 }

@@ -15,7 +15,7 @@
         "action": "Click",
         "recognition": "OCR",
         "expected": "取消",
-        "post_delay": 500,
+        "post_delay": 1500,
         "next": [
             "tkfm_alchemy_点击派遣三角形"
         ],
@@ -24,7 +24,7 @@
     "tkfm_alchemy_退出派遣小界面": {
         "recognition": "DirectHit",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "target": [
             297,
             453,
@@ -36,14 +36,15 @@
     "tkfm_alchemy_点击派遣三角形": {
         "recognition": "TemplateMatch",
         "template": "tkfm\\Dispatch\\派遣三角形.png",
+        "threshold": 0.5,
         "action": "Click",
         "timeout": 5000,
-        "post_delay": 500,
+        "post_delay": 1500,
         "roi": [
             0,
-            437,
-            89,
-            363
+            577,
+            71,
+            104
         ],
         "next": [
             "tkfm_alchemy_点击炼金图标"
@@ -57,6 +58,7 @@
         "template": "tkfm\\Alchemy\\炼金图标.png",
         "action": "Click",
         "timeout": 5000,
+        "post_delay": 1500,
         "roi": [
             0,
             453,
@@ -75,7 +77,7 @@
         "expected": "一键收取",
         "action": "Click",
         "timeout": 5000,
-        "post_delay": 500,
+        "post_delay": 2000,
         "roi": [
             387,
             769,
@@ -94,6 +96,7 @@
         "recognition": "OCR",
         "expected": "确定",
         "action": "Click",
+        "post_delay": 1500,
         "next": [
             "tkfm_alchemy_点击确定",
             "tkfm_alchemhy_自动炼金1"
@@ -104,8 +107,8 @@
     "tkfm_alchemhy_自动炼金1": {
         "recognition": "OCR",
         "expected": "紫水晶",
+        "post_delay": 1500,
         "action": "Click",
-        "post_delay": 500,
         "roi": [
             89,
             192,
@@ -126,7 +129,7 @@
         "recognition": "OCR",
         "expected": "紫水晶",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "roi": [
             92,
             386,
@@ -147,7 +150,7 @@
         "recognition": "OCR",
         "expected": "蓝宝石",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "roi": [
             94,
             575,
@@ -166,7 +169,7 @@
     "tkfm_alchemhy_已达到上限无法更改1": {
         "recognition": "OCR",
         "expected": "确定",
-        "post_delay": 500,
+        "post_delay": 1500,
         "action": "Click",
         "next": [
             "tkfm_alchemhy_自动炼金2",
@@ -177,7 +180,7 @@
         "recognition": "OCR",
         "expected": "确定",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "next": [
             "tkfm_alchemhy_自动炼金3",
             "tkfm_alchemhy_已达到上限无法更改2"
@@ -187,7 +190,7 @@
         "recognition": "OCR",
         "expected": "确定",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "next": [
             "tkfm_alchemhy_自动完成订单",
             "tkfm_alchemhy_已达到上限无法更改3"
@@ -198,7 +201,7 @@
         "recognition": "OCR",
         "expected": "MAX",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "next": [
             "tkfm_alchemhy_点击炼金1",
             "tkfm_alchemhy_点击max1"
@@ -208,7 +211,7 @@
         "recognition": "OCR",
         "expected": "MAX",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "next": [
             "tkfm_alchemhy_点击炼金2",
             "tkfm_alchemhy_点击max2"
@@ -218,7 +221,7 @@
         "recognition": "OCR",
         "expected": "MAX",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "next": [
             "tkfm_alchemhy_点击炼金3",
             "tkfm_alchemhy_点击max3"
@@ -228,7 +231,7 @@
         "recognition": "OCR",
         "expected": "炼金",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "roi": [
             250,
             804,
@@ -243,7 +246,7 @@
     "tkfm_alchemhy_点击炼金2": {
         "recognition": "OCR",
         "expected": "炼金",
-        "post_delay": 500,
+        "post_delay": 1500,
         "action": "Click",
         "roi": [
             250,
@@ -259,7 +262,7 @@
     "tkfm_alchemhy_点击炼金3": {
         "recognition": "OCR",
         "expected": "炼金",
-        "post_delay": 500,
+        "post_delay": 1500,
         "action": "Click",
         "timeout": 5000,
         "roi": [
@@ -276,7 +279,7 @@
         "recognition": "OCR",
         "expected": "紫水晶",
         "pre_delay": 500,
-        "post_delay": 500,
+        "post_delay": 1500,
         "action": "Click",
         "roi": [
             85,
@@ -293,7 +296,7 @@
         "expected": "紫水晶",
         "pre_delay": 500,
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "roi": [
             85,
             366,
@@ -307,7 +310,7 @@
     "tkfm_alchemhy_炼金3为空_手动填充蓝宝石": {
         "recognition": "OCR",
         "expected": "蓝宝石",
-        "post_delay": 500,
+        "post_delay": 1500,
         "action": "Click",
         "roi": [
             85,
@@ -329,7 +332,7 @@
             539,
             131
         ],
-        "post_delay": 500,
+        "post_delay": 1500,
         "next": [
             "tkfm_alchemhy_炼金1为空_手动填充紫水晶",
             "tkfm_alchemhy_炼金1为空_点击闲置中"
@@ -345,7 +348,7 @@
             541,
             134
         ],
-        "post_delay": 500,
+        "post_delay": 1500,
         "next": [
             "tkfm_alchemhy_炼金2为空_手动填充紫水晶",
             "tkfm_alchemhy_炼金2为空_点击闲置中"
@@ -355,7 +358,7 @@
         "recognition": "OCR",
         "expected": "闲置中",
         "action": "Click",
-        "post_delay": 500,
+        "post_delay": 1500,
         "roi": [
             85,
             571,
@@ -367,5 +370,62 @@
             "tkfm_alchemhy_自动炼金1"
         ]
     },
-    "tkfm_alchemhy_自动完成订单": {}
+    "tkfm_alchemhy_自动完成订单": {
+        "recognition": "OCR",
+        "expected": "贸易品订单",
+        "action": "Click",
+        "post_delay": 800,
+        "roi": [
+            24,
+            898,
+            169,
+            292
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_alchemhy_自动完成订单",
+            "tkfm_alchemhy_获取订单中"
+        ]
+    },
+    "tkfm_alchemhy_获取订单中": {
+        "recognition": "OCR",
+        "expected": "获取订单中",
+        "post_delay": 1500,
+        "roi": [
+            24,
+            898,
+            169,
+            292
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_alchemhy_退出炼金界面回到主界面",
+            "tkfm_alchemhy_获取订单中"
+        ]
+    },
+    "tkfm_alchemhy_退出炼金界面回到主界面": {
+        "recognition": "DirectHit",
+        "action": "Key",
+        "key": 4,
+        "post_delay": 1500,
+        "next": [
+            "tkfm_alchemhy_是否主界面",
+            "tkfm_alchemhy_退出炼金界面回到主界面"
+        ]
+    },
+    "tkfm_alchemhy_是否主界面": {
+        "recognition": "OCR",
+        "expected": "出征",
+        "next": [],
+        "post_delay": 1500,
+        "on_error": [
+            "tkfm_alchemhy_退出炼金界面回到主界面"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_alchemhy_自动炼金以及提交订单": {
+        "next": [
+            "tkfm_alchemy_看板界面"
+        ]
+    }
 }

@@ -38,8 +38,20 @@
             ]
         },
         {
+            "name": "自动领取好友体力",
+            "entry": "tkfm_friend_领取好友体力"
+        },
+        {
             "name": "自动派遣",
-            "entry": "自动派遣"
+            "entry": "tkfm_dispatch_自动派遣"
+        },
+        {
+            "name": "自动炼金以及提交订单",
+            "entry": "tkfm_alchemhy_自动炼金以及提交订单"
+        },
+        {
+            "name": "日常任务",
+            "entry": "tkfm_daily_完成日常任务"
         }
     ],
     "option": {

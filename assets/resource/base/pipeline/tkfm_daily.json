@@ -1,0 +1,318 @@
+{
+    "tkfm_daily_看板界面": {
+        "recognition": "DirectHit",
+        "action": "Key",
+        "key": [
+            4
+        ],
+        "next": [
+            "tkfm_daily_返回标题提示",
+            "tkfm_daily_看板界面"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_daily_返回标题提示": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "取消",
+        "next": [
+            "tkfm_daily_自动升级两次"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_daily_自动升级两次": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "角色",
+        "roi": [
+            39,
+            1153,
+            620,
+            101
+        ],
+        "next": [
+            "tkfm_daily_选择排序方式_点击等级"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "tkfm_daily_排序方式不是等级_点击固定排序方式所在区域"
+        ]
+    },
+    "tkfm_daily_选择排序方式_点击等级": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "等级",
+        "roi": [
+            356,
+            523,
+            305,
+            75
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_选择排序方式_只选择SSR"
+        ]
+    },
+    "tkfm_daily_排序方式不是等级_点击固定排序方式所在区域": {
+        "action": "Click",
+        "recognition": "DirectHit",
+        "target": [
+            560,
+            541,
+            84,
+            41
+        ],
+        "next": [
+            "tkfm_daily_排序方式不是等级_选择为等级"
+        ]
+    },
+    "tkfm_daily_排序方式不是等级_选择为等级": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "等级",
+        "roi": [
+            86,
+            217,
+            188,
+            81
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_选择排序方式_只选择SSR"
+        ]
+    },
+    "tkfm_daily_选择排序方式_只选择SSR": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "SSR",
+        "roi": [
+            86,
+            781,
+            513,
+            95
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_选择排序方式_点击确认"
+        ]
+    },
+    "tkfm_daily_选择排序方式_点击确认": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            387,
+            1059,
+            208,
+            54
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_确实排序方式_等级是从高到低",
+            "tkfm_daily_确实排序方式_等级是从低到高"
+        ]
+    },
+    "tkfm_daily_确实排序方式_等级是从高到低": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\倒三角.png",
+        "roi": [
+            658,
+            527,
+            61,
+            69
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_向左滑动"
+        ]
+    },
+    "tkfm_daily_确实排序方式_等级是从低到高": {
+        "action": "DoNothing",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\正三角.png",
+        "roi": [
+            658,
+            527,
+            61,
+            69
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_向左滑动"
+        ]
+    },
+    "tkfm_daily_向左滑动": {
+        "action": "Swipe",
+        "duration": 500,
+        "begin": [
+            650,
+            756,
+            1,
+            1
+        ],
+        "end": [
+            223,
+            756,
+            1,
+            1
+        ],
+        "next": [
+            "tkfm_daily_随机选择等级低的ssr升级"
+        ]
+    },
+    "tkfm_daily_随机选择等级低的ssr升级": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\skill.png",
+        "roi": [
+            62,
+            597,
+            576,
+            41
+        ],
+        "index": 3,
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_点击升级"
+        ]
+    },
+    "tkfm_daily_点击升级": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "升级",
+        "roi": [
+            584,
+            923,
+            128,
+            218
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_选择药水_默认小药水1"
+        ]
+    },
+    "tkfm_daily_选择药水_默认小药水1": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\小药水.png",
+        "roi": [
+            79,
+            774,
+            560,
+            124
+        ],
+        "timeout": 5000,
+        "post_delay": 1000,
+        "next": [
+            "tkfm_daily_选择药水后点击升级1"
+        ]
+    },
+    "tkfm_daily_选择药水_默认小药水2": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\小药水.png",
+        "roi": [
+            79,
+            774,
+            560,
+            124
+        ],
+        "timeout": 5000,
+        "post_delay": 1000,
+        "next": [
+            "tkfm_daily_选择药水后点击升级2"
+        ]
+    },
+    "tkfm_daily_选择药水后点击升级1": {
+        "action": "Click",
+        "recognition": "OCR",
+        "post_delay": 2500,
+        "expected": "升级",
+        "roi": [
+            233,
+            1020,
+            258,
+            71
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_选择药水_默认小药水2"
+        ]
+    },
+    "tkfm_daily_选择药水后点击升级2": {
+        "action": "Click",
+        "recognition": "OCR",
+        "post_delay": 1000,
+        "expected": "升级",
+        "roi": [
+            233,
+            1020,
+            258,
+            71
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_升级两次完成后点击返回1"
+        ]
+    },
+    "tkfm_daily_升级两次完成后点击返回1": {
+        "action": "Key",
+        "key": 4,
+        "recognition": "DirectHit",
+        "next": [
+            "tkfm_daily_将排序方式调回由高到低",
+            "tkfm_daily_进入调教界面",
+            "tkfm_daily_升级两次完成后点击返回1"
+        ]
+    },
+    "tkfm_daily_将排序方式调回由高到低": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\正三角.png",
+        "roi": [
+            658,
+            527,
+            61,
+            69
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_将排序方式调回由高到低"
+        ],
+        "on_error": [
+            "tkfm_daily_升级两次完成后点击返回2"
+        ]
+    },
+    "tkfm_daily_升级两次完成后点击返回2": {
+        "action": "Key",
+        "key": 4,
+        "recognition": "DirectHit",
+        "next": [
+            "tkfm_daily_进入调教界面",
+            "tkfm_daily_升级两次完成后点击返回2"
+        ],
+        "post_delay": 800
+    },
+    "tkfm_daily_进入调教界面": {
+        "action": "DoNothing",
+        "recognition": "OCR",
+        "expected": "调教",
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_退出调教界面"
+        ]
+    },
+    "tkfm_daily_退出调教界面": {
+        "action": "Key",
+        "key": 4,
+        "recognition": "DirectHit",
+        "next": [],
+        "post_delay": 800
+    },
+    "tkfm_daily_完成日常任务": {
+        "next": [
+            "tkfm_daily_看板界面"
+        ]
+    }
+}
