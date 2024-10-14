@@ -1,16 +1,12 @@
 from pathlib import Path
-
 import shutil
 import sys
 import json
-
 from configure import configure_ocr_model
-
 
 working_dir = Path(__file__).parent
 install_path = working_dir / Path("install")
 version = len(sys.argv) > 1 and sys.argv[1] or "v0.0.1"
-
 
 def install_deps():
     if not (working_dir / "deps" / "bin").exists():
@@ -35,9 +31,7 @@ def install_deps():
         dirs_exist_ok=True,
     )
 
-
 def install_resource():
-
     configure_ocr_model()
 
     shutil.copytree(
@@ -58,7 +52,6 @@ def install_resource():
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
         json.dump(interface, f, ensure_ascii=False, indent=4)
 
-
 def install_chores():
     shutil.copy2(
         working_dir / "README.md",
@@ -69,8 +62,12 @@ def install_chores():
         install_path,
     )
 
-
 if __name__ == "__main__":
+    # Check if install directory exists and remove it
+    if install_path.exists():
+        shutil.rmtree(install_path)
+        print(f"rm  {install_path} successfully.")
+
     install_deps()
     install_resource()
     install_chores()
