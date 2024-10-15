@@ -17,7 +17,8 @@
         "expected": "取消",
         "post_delay": 1500,
         "next": [
-            "tkfm_alchemy_点击派遣三角形"
+            "tkfm_alchemy_点击派遣三角形",
+            "tkfm_alchemy_点击炼金图标"
         ],
         "timeout": 5000
     },
@@ -193,6 +194,7 @@
         "post_delay": 1500,
         "next": [
             "tkfm_alchemhy_自动完成订单",
+            "tkfm_alchemhy_获取订单中",
             "tkfm_alchemhy_已达到上限无法更改3"
         ],
         "timeout": 5000

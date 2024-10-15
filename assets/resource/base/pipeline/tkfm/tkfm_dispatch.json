@@ -17,7 +17,9 @@
         "recognition": "OCR",
         "expected": "取消",
         "next": [
-            "tkfm_dispatch_点击派遣三角形"
+            "tkfm_dispatch_点击派遣三角形",
+            "tkfm_dispatch_识别派遣是否完成",
+            "tkfm_dispatch_三角形后闲置中"
         ],
         "threshold": 0.5,
         "timeout": 5000,
@@ -87,7 +89,154 @@
             "tkfm_dispatch_闲置中",
             "tkfm_dispatch_Nothing"
         ],
-        "post_delay": 1500
+        "post_delay": 2500
+    },
+    "tkfm_dispatch_选择房间界面滑到最上": {
+        "action": "Swipe",
+        "begin": [
+            593,
+            237,
+            1,
+            1
+        ],
+        "end": [
+            603,
+            1045,
+            1,
+            1
+        ],
+        "recognition": "DirectHit",
+        "next": [
+            "tkfm_dispatch_选择房间界面识别22hrs",
+            "tkfm_dispatch_选择房间界面识别12hrs",
+            "tkfm_dispatch_选择房间界面识别9hrs",
+            "tkfm_dispatch_选择房间界面识别6hrs"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面滑到最下": {
+        "action": "Swipe",
+        "end": [
+            584,
+            220,
+            1,
+            1
+        ],
+        "begin": [
+            590,
+            728,
+            1,
+            1
+        ],
+        "recognition": "DirectHit",
+        "next": [
+            "tkfm_dispatch_选择房间界面识别22hrs",
+            "tkfm_dispatch_选择房间界面识别12hrs",
+            "tkfm_dispatch_选择房间界面识别9hrs",
+            "tkfm_dispatch_选择房间界面识别6hrs"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面识别22hrs": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "22hrs",
+        "roi": [
+            138,
+            214,
+            131,
+            554
+        ],
+        "next": [
+            "tkfm_dispatch_选择房间界面_是否点击了系统原本选择的",
+            "tkfm_dispatch_选择房间界面_点击派遣人员的固定区域"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面识别12hrs": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "12hrs",
+        "roi": [
+            138,
+            214,
+            131,
+            554
+        ],
+        "next": [
+            "tkfm_dispatch_选择房间界面_是否点击了系统原本选择的",
+            "tkfm_dispatch_选择房间界面_点击派遣人员的固定区域"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面识别9hrs": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "9hrs",
+        "roi": [
+            138,
+            214,
+            131,
+            554
+        ],
+        "next": [
+            "tkfm_dispatch_选择房间界面_是否点击了系统原本选择的",
+            "tkfm_dispatch_选择房间界面_点击派遣人员的固定区域"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面识别6hrs": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "6hrs",
+        "roi": [
+            138,
+            214,
+            131,
+            554
+        ],
+        "next": [
+            "tkfm_dispatch_选择房间界面_是否点击了系统原本选择的",
+            "tkfm_dispatch_选择房间界面_点击派遣人员的固定区域"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面_点击派遣人员的固定区域": {
+        "action": "Click",
+        "recognition": "DirectHit",
+        "target": [
+            109,
+            920,
+            86,
+            144
+        ],
+        "next": [
+            "tkfm_dispatch_判断是否进入派遣角色选择界面"
+        ]
+    },
+    "tkfm_dispatch_判断是否进入派遣角色选择界面": {
+        "recognition": "OCR",
+        "expected": "条件",
+        "roi": [
+            122,
+            471,
+            169,
+            51
+        ],
+        "next": [
+            "tkfm_dispatch_点击条件推荐"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面_是否点击了系统原本选择的": {
+        "recognition": "OCR",
+        "expected": "房间",
+        "roi": [
+            286,
+            815,
+            146,
+            62
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_dispatch_选择房间界面识别22hrs",
+            "tkfm_dispatch_选择房间界面识别12hrs",
+            "tkfm_dispatch_选择房间界面识别9hrs",
+            "tkfm_dispatch_选择房间界面识别6hrs"
+        ]
     },
     "tkfm_dispatch_闲置中": {
         "recognition": "OCR",
@@ -95,9 +244,22 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "tkfm_dispatch_系统没有选择任务_识别锁型",
-            "tkfm_dispatch_系统已经选择任务_直接点击出发",
+            "tkfm_dispatch_选择房间界面滑到最上",
             "tkfm_dispatch_闲置中"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "tkfm_dispatch_退出派遣界面"
+        ]
+    },
+    "tkfm_dispatch_闲置中_选择房间2和3": {
+        "recognition": "OCR",
+        "expected": "闲置中",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "tkfm_dispatch_选择房间界面滑到最下",
+            "tkfm_dispatch_闲置中_选择房间2和3"
         ],
         "timeout": 5000,
         "on_error": [
@@ -205,7 +367,7 @@
         "recognition": "OCR",
         "expected": "出发",
         "next": [
-            "tkfm_dispatch_闲置中"
+            "tkfm_dispatch_闲置中_选择房间2和3"
         ],
         "timeout": 5000,
         "on_error": [

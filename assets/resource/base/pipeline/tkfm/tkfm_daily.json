@@ -41,7 +41,17 @@
     "tkfm_daily_选择排序方式_点击等级": {
         "action": "Click",
         "recognition": "OCR",
-        "expected": "等级",
+        "expected": [
+            "等级",
+            "稀有度",
+            "必杀技Lv",
+            "HP",
+            "ATK",
+            "进化",
+            "潜力Lv",
+            "调教房间",
+            "必杀技CD"
+        ],
         "roi": [
             356,
             523,
@@ -50,6 +60,7 @@
         ],
         "timeout": 5000,
         "next": [
+            "tkfm_daily_排序方式不是等级_选择为等级",
             "tkfm_daily_选择排序方式_只选择SSR"
         ]
     },
@@ -295,16 +306,129 @@
         "post_delay": 800
     },
     "tkfm_daily_进入调教界面": {
-        "action": "DoNothing",
+        "action": "Click",
         "recognition": "OCR",
         "expected": "调教",
         "timeout": 5000,
         "next": [
-            "tkfm_daily_退出调教界面"
+            "tkfm_daily_判断是否按调教房间顺序排序_点击筛选排序位置"
         ]
     },
+    "tkfm_daily_判断是否按调教房间顺序排序_点击筛选排序位置": {
+        "action": "Click",
+        "recognition": "OCR",
+        "roi": [
+            470,
+            651,
+            116,
+            49
+        ],
+        "expected": [
+            "等级",
+            "稀有度",
+            "必杀技Lv",
+            "HP",
+            "ATK",
+            "进化",
+            "潜力Lv",
+            "调教房间",
+            "必杀技CD"
+        ],
+        "next": [
+            "tkfm_daily_判断是否按调教房间顺序排序_点击调教房间"
+        ]
+    },
+    "tkfm_daily_判断是否按调教房间顺序排序_点击调教房间": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "调教房间",
+        "roi": [
+            105,
+            232,
+            492,
+            213
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_判断是否按调教房间顺序排序_只选择SSR"
+        ]
+    },
+    "tkfm_daily_判断是否按调教房间顺序排序_只选择SSR": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "SSR",
+        "roi": [
+            86,
+            781,
+            513,
+            95
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_判断是否按调教房间顺序排序_点击确认"
+        ]
+    },
+    "tkfm_daily_判断是否按调教房间顺序排序_点击确认": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            387,
+            1059,
+            208,
+            54
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_调教房间顺序排序_等级是从高到低",
+            "tkfm_daily_调教房间顺序排序_等级是从低到高"
+        ]
+    },
+    "tkfm_daily_调教房间顺序排序_等级是从高到低": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\倒三角.png",
+        "roi": [
+            658,
+            527,
+            61,
+            69
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_调教房间顺序排序_选择最左边的角色"
+        ]
+    },
+    "tkfm_daily_调教房间顺序排序_等级是从低到高": {
+        "action": "DoNothing",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\正三角.png",
+        "roi": [
+            658,
+            527,
+            61,
+            69
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_daily_调教房间顺序排序_选择最左边的角色"
+        ]
+    },
+    "tkfm_daily_调教房间顺序排序_选择最左边的角色": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "NEXT",
+        "roi": [
+            129,
+            106,
+            213,
+            156
+        ],
+        "timeout": 5000,
+        "next": []
+    },
     "tkfm_daily_退出调教界面": {
-        "action": "Key",
+        "action": "DoNothing",
         "key": 4,
         "recognition": "DirectHit",
         "next": [],

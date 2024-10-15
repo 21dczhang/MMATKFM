@@ -63,8 +63,11 @@
         "timeout": 50000,
         "next": [
             "tkfm_StartUp_SKIP",
+            "tkfm_StartUp_关闭登入公布栏",
+            "tkfm_StartUp_TAP_TO_START",
             "tkfm_StartUp_点击图标"
-        ]
+        ],
+        "interrupt": []
     },
     "tkfm_StartUp_SKIP": {
         "post_delay": 1500,

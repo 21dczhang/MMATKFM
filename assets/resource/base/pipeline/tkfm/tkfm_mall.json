@@ -1,0 +1,291 @@
+{
+    "tkfm_mall_看板界面": {
+        "recognition": "DirectHit",
+        "action": "Key",
+        "key": [
+            4
+        ],
+        "next": [
+            "tkfm_mall_返回标题提示",
+            "tkfm_mall_看板界面"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_mall_返回标题提示": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "取消",
+        "post_delay": 1500,
+        "next": [
+            "tkfm_mall_点击商城"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_mall_点击商城": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "商城",
+        "roi": [
+            55,
+            1149,
+            597,
+            101
+        ],
+        "post_delay": 1500,
+        "next": [
+            "tkfm_mall_每日兑换",
+            "tkfm_mall_点击商城"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_mall_每日兑换": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "每日兑换",
+        "roi": [
+            71,
+            95,
+            579,
+            75
+        ],
+        "next": [
+            "tkfm_mall_购买交易所招募命令",
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片",
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_上半部分购买完毕_往下滑"
+        ],
+        "on_error": [
+            "tkfm_mall_每日兑换"
+        ],
+        "interrupt": [],
+        "timeout": 3000
+    },
+    "tkfm_mall_购买交易所招募命令": {
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Mall\\交易所招募命令折扣.png",
+        "action": "Click",
+        "threshold": 0.9,
+        "next": [
+            "tkfm_mall_购买交易所招募命令_点击购买"
+        ],
+        "on_error": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片",
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_上半部分购买完毕_往下滑"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_mall_购买交易所招募命令_点击购买": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "购买",
+        "next": [
+            "tkfm_mall_购买交易所招募命令_点击购买后的确定",
+            "tkfm_mall_购买交易所招募命令_点击购买"
+        ],
+        "on_error": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片",
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_上半部分购买完毕_往下滑"
+        ],
+        "timeout": 3000
+    },
+    "tkfm_mall_购买交易所招募命令_点击购买后的确定": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "确定",
+        "next": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片",
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_上半部分购买完毕_往下滑"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_mall_购买交易所temp": {
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Mall\\交易所纯净水折扣.png",
+        "action": "Click",
+        "timeout": 5000,
+        "threshold": 0.9
+    },
+    "tkfm_mall_购买交易所打折潜力素材和龙女碎片": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "threshold": 0.9,
+        "template": [
+            "tkfm\\Mall\\交易所史莱姆残液折扣.png",
+            "tkfm\\Mall\\交易所纯净水折扣.png",
+            "tkfm\\Mall\\交易所高级合剂折扣.png",
+            "tkfm\\Mall\\交易所星之粉折扣.png",
+            "tkfm\\Mall\\交易所野兽之爪折扣.png",
+            "tkfm\\Mall\\交易所月光水折扣.png",
+            "tkfm\\Mall\\交易所龙女碎片.png"
+        ],
+        "next": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_点击购买"
+        ],
+        "on_error": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_购买完毕_进入协会商店"
+        ],
+        "interrupt": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_上半部分购买完毕_往下滑"
+        ],
+        "timeout": 3000
+    },
+    "tkfm_mall_购买交易所打折潜力素材和龙女碎片_点击购买": {
+        "recognition": "OCR",
+        "expected": "购买",
+        "action": "Click",
+        "next": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_点击购买后的确定",
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片"
+        ],
+        "on_error": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_上半部分购买完毕_往下滑"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_mall_购买交易所打折潜力素材和龙女碎片_点击购买后的确定": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "确定",
+        "next": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片"
+        ],
+        "on_error": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_上半部分购买完毕_往下滑"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_mall_购买交易所打折潜力素材和龙女碎片_上半部分购买完毕_往下滑": {
+        "action": "Swipe",
+        "begin": [
+            654,
+            1003,
+            1,
+            1
+        ],
+        "end": [
+            660,
+            353,
+            1,
+            1
+        ],
+        "next": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片"
+        ],
+        "on_error": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_购买完毕_进入协会商店"
+        ],
+        "timeout": 3000
+    },
+    "tkfm_mall_购买交易所打折潜力素材和龙女碎片_购买完毕_进入协会商店": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "协会商店",
+        "next": [
+            "tkfm_mall_协会商店_购买打折银币以及打折属性石头"
+        ],
+        "on_error": [
+            "tkfm_mall_协会商店_购买打折银币以及打折属性石头_上半部分购买完毕_往下滑"
+        ],
+        "timeout": 3000
+    },
+    "tkfm_mall_协会商店_购买打折银币以及打折属性石头": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": [
+            "tkfm\\Mall\\协会商店银币折扣.png",
+            "tkfm\\Mall\\协会商店光明之石折扣.png",
+            "tkfm\\Mall\\协会商店火焰之石折扣.png",
+            "tkfm\\Mall\\协会商店烈风之石折扣.png"
+        ],
+        "next": [
+            "tkfm_mall_协会商店_购买打折银币以及打折属性石头_点击购买"
+        ],
+        "on_error": [
+            "tkfm_mall_协会商店_结束购买_退回主界面"
+        ],
+        "interrupt": [
+            "tkfm_mall_协会商店_购买打折银币以及打折属性石头_上半部分购买完毕_往下滑"
+        ],
+        "timeout": 3000,
+        "threshold": 0.9
+    },
+    "tkfm_mall_协会商店_购买打折银币以及打折属性石头_点击购买": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "购买",
+        "next": [
+            "tkfm_mall_协会商店_购买打折银币以及打折属性石头_点击购买后的确定",
+            "tkfm_mall_协会商店_购买打折银币以及打折属性石头_点击购买后龙玉不足"
+        ]
+    },
+    "tkfm_mall_协会商店_购买打折银币以及打折属性石头_点击购买后龙玉不足": {
+        "action": "StopTask",
+        "recognition": "OCR",
+        "expected": "龙玉不足",
+        "next": []
+    },
+    "tkfm_mall_协会商店_购买打折银币以及打折属性石头_点击购买后的确定": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "确定",
+        "next": [
+            "tkfm_mall_协会商店_购买打折银币以及打折属性石头"
+        ],
+        "timeout": 3000,
+        "on_error": [
+            "tkfm_mall_协会商店_购买打折银币以及打折属性石头_上半部分购买完毕_往下滑"
+        ]
+    },
+    "tkfm_mall_协会商店_购买打折银币以及打折属性石头_上半部分购买完毕_往下滑": {
+        "action": "Swipe",
+        "begin": [
+            654,
+            1003,
+            1,
+            1
+        ],
+        "end": [
+            660,
+            353,
+            1,
+            1
+        ],
+        "next": [
+            "tkfm_mall_协会商店_购买打折银币以及打折属性石头"
+        ],
+        "on_error": [
+            "tkfm_mall_协会商店_结束购买_退回主界面"
+        ],
+        "timeout": 3000
+    },
+    "tkfm_mall_协会商店_结束购买_退回主界面": {
+        "action": "Key",
+        "key": 4,
+        "recognition": "DirectHit",
+        "next": [
+            "tkfm_mall_协会商店_结束购买_判断是否为主界面",
+            "tkfm_mall_协会商店_结束购买_退回主界面"
+        ],
+        "timeout": 3000
+    },
+    "tkfm_mall_协会商店_结束购买_判断是否为主界面": {
+        "action": "StopApp",
+        "recognition": "OCR",
+        "expected": "出征",
+        "timeout": 3000
+    },
+    "tkfm_mall_协会商店_购买打折银币_点击购买": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "购买",
+        "next": [
+            "tkfm_mall_协会商店_购买打折银币_点击购买后的确定",
+            "tkfm_mall_协会商店_购买打折银币_点击购买"
+        ]
+    },
+    "tkfm_mall_协会商店_购买打折银币_点击购买后的确定": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "确定",
+        "next": []
+    }
+}

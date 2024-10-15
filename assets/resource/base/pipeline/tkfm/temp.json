@@ -1,4 +1,24 @@
 {
+    "点击前往下关摸鱼塔Temp": {
+        "recognition": "OCR",
+        "expected": "前往下关",
+        "action": "Click",
+        "timeout": 100000,
+        "next": [
+            "点击摸鱼塔开始",
+            "点击前往下关摸鱼塔Temp"
+        ]
+    },
+    "点击摸鱼塔开始": {
+        "recognition": "OCR",
+        "expected": "开始",
+        "action": "Click",
+        "timeout": 100000,
+        "next": [
+            "点击摸鱼塔开始",
+            "点击前往下关摸鱼塔Temp"
+        ]
+    },
     "点击继续Temp": {
         "recognition": "OCR",
         "expected": "再次挑战",
@@ -12,7 +32,7 @@
     },
     "使用剩下1日的体力药水": {
         "recognition": "OCR",
-        "expected": "1日",
+        "expected": "6日",
         "timeout": 2000,
         "post_delay": 500,
         "next": [
