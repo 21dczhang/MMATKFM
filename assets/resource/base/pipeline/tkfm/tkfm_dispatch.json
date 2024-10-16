@@ -1,0 +1,503 @@
+{
+    "tkfm_dispatch_看板界面": {
+        "recognition": "DirectHit",
+        "action": "Key",
+        "key": [
+            4
+        ],
+        "next": [
+            "tkfm_dispatch_返回标题提示",
+            "tkfm_dispatch_看板界面"
+        ],
+        "timeout": 5000,
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_返回标题提示": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "取消",
+        "next": [
+            "tkfm_dispatch_点击派遣三角形",
+            "tkfm_dispatch_识别派遣是否完成",
+            "tkfm_dispatch_三角形后闲置中"
+        ],
+        "threshold": 0.5,
+        "timeout": 5000,
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_退出派遣小界面": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            297,
+            453,
+            121,
+            88
+        ],
+        "timeout": 5000,
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_点击派遣三角形": {
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Dispatch\\派遣三角形.png",
+        "action": "Click",
+        "timeout": 5000,
+        "post_delay": 1500,
+        "threshold": 0.5,
+        "roi": [
+            0,
+            437,
+            89,
+            363
+        ],
+        "next": [
+            "tkfm_dispatch_识别派遣是否完成",
+            "tkfm_dispatch_三角形后闲置中"
+        ],
+        "on_error": [
+            "tkfm_dispatch_退出派遣小界面"
+        ]
+    },
+    "tkfm_dispatch_识别派遣是否完成": {
+        "recognition": "OCR",
+        "expected": "派遣完成",
+        "action": "Click",
+        "next": [
+            "tkfm_dispatch_点击队伍归来"
+        ],
+        "on_error": [],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_三角形后闲置中": {
+        "recognition": "OCR",
+        "expected": "闲置中",
+        "action": "Click",
+        "next": [
+            "tkfm_dispatch_闲置中"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_点击队伍归来": {
+        "recognition": "OCR",
+        "expected": "队伍归来",
+        "action": "Click",
+        "next": [
+            "tkfm_dispatch_点击关闭"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "tkfm_dispatch_闲置中",
+            "tkfm_dispatch_Nothing"
+        ],
+        "post_delay": 2500
+    },
+    "tkfm_dispatch_选择房间界面滑到最上": {
+        "action": "Swipe",
+        "begin": [
+            593,
+            237,
+            1,
+            1
+        ],
+        "end": [
+            603,
+            1045,
+            1,
+            1
+        ],
+        "recognition": "DirectHit",
+        "next": [
+            "tkfm_dispatch_选择房间界面识别22hrs",
+            "tkfm_dispatch_选择房间界面识别12hrs",
+            "tkfm_dispatch_选择房间界面识别9hrs",
+            "tkfm_dispatch_选择房间界面识别6hrs"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面滑到最下": {
+        "action": "Swipe",
+        "end": [
+            584,
+            220,
+            1,
+            1
+        ],
+        "begin": [
+            590,
+            728,
+            1,
+            1
+        ],
+        "recognition": "DirectHit",
+        "next": [
+            "tkfm_dispatch_选择房间界面识别22hrs",
+            "tkfm_dispatch_选择房间界面识别12hrs",
+            "tkfm_dispatch_选择房间界面识别9hrs",
+            "tkfm_dispatch_选择房间界面识别6hrs"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面识别22hrs": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "22hrs",
+        "roi": [
+            138,
+            214,
+            131,
+            554
+        ],
+        "next": [
+            "tkfm_dispatch_选择房间界面_是否点击了系统原本选择的",
+            "tkfm_dispatch_选择房间界面_点击派遣人员的固定区域"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面识别12hrs": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "12hrs",
+        "roi": [
+            138,
+            214,
+            131,
+            554
+        ],
+        "next": [
+            "tkfm_dispatch_选择房间界面_是否点击了系统原本选择的",
+            "tkfm_dispatch_选择房间界面_点击派遣人员的固定区域"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面识别9hrs": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "9hrs",
+        "roi": [
+            138,
+            214,
+            131,
+            554
+        ],
+        "next": [
+            "tkfm_dispatch_选择房间界面_是否点击了系统原本选择的",
+            "tkfm_dispatch_选择房间界面_点击派遣人员的固定区域"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面识别6hrs": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "6hrs",
+        "roi": [
+            138,
+            214,
+            131,
+            554
+        ],
+        "next": [
+            "tkfm_dispatch_选择房间界面_是否点击了系统原本选择的",
+            "tkfm_dispatch_选择房间界面_点击派遣人员的固定区域"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面_点击派遣人员的固定区域": {
+        "action": "Click",
+        "recognition": "DirectHit",
+        "target": [
+            109,
+            920,
+            86,
+            144
+        ],
+        "next": [
+            "tkfm_dispatch_判断是否进入派遣角色选择界面"
+        ]
+    },
+    "tkfm_dispatch_判断是否进入派遣角色选择界面": {
+        "recognition": "OCR",
+        "expected": "条件",
+        "roi": [
+            122,
+            471,
+            169,
+            51
+        ],
+        "next": [
+            "tkfm_dispatch_点击条件推荐"
+        ]
+    },
+    "tkfm_dispatch_选择房间界面_是否点击了系统原本选择的": {
+        "recognition": "OCR",
+        "expected": "房间",
+        "roi": [
+            286,
+            815,
+            146,
+            62
+        ],
+        "timeout": 5000,
+        "next": [
+            "tkfm_dispatch_选择房间界面识别22hrs",
+            "tkfm_dispatch_选择房间界面识别12hrs",
+            "tkfm_dispatch_选择房间界面识别9hrs",
+            "tkfm_dispatch_选择房间界面识别6hrs"
+        ]
+    },
+    "tkfm_dispatch_闲置中": {
+        "recognition": "OCR",
+        "expected": "闲置中",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "tkfm_dispatch_选择房间界面滑到最上",
+            "tkfm_dispatch_闲置中"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "tkfm_dispatch_退出派遣界面"
+        ]
+    },
+    "tkfm_dispatch_闲置中_选择房间2和3": {
+        "recognition": "OCR",
+        "expected": "闲置中",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "tkfm_dispatch_选择房间界面滑到最下",
+            "tkfm_dispatch_闲置中_选择房间2和3"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "tkfm_dispatch_退出派遣界面"
+        ]
+    },
+    "tkfm_dispatch_系统已经选择任务_直接点击出发": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "出发",
+        "next": [
+            "tkfm_dispatch_闲置中"
+        ],
+        "on_error": [
+            "tkfm_dispatch_退出派遣界面"
+        ],
+        "timeout": 5000,
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_系统没有选择任务_识别锁型": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Dispatch\\锁型.png",
+        "pre_delay": 500,
+        "roi": [
+            105,
+            920,
+            512,
+            149
+        ],
+        "next": [
+            "tkfm_dispatch_系统没有选择任务_随机填充任务"
+        ],
+        "on_error": [
+            "tkfm_dispatch_闲置中"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_系统没有选择任务_随机填充任务": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "LV.",
+        "roi": [
+            142,
+            217,
+            116,
+            556
+        ],
+        "next": [
+            "tkfm_dispatch_点击empty"
+        ],
+        "on_error": [
+            "tkfm_dispatch_向下滑动"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_点击empty": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "EMPTY",
+        "next": [
+            "tkfm_dispatch_点击条件推荐"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_点击条件推荐": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "条件推荐",
+        "next": [
+            "tkfm_dispatch_无推荐角色",
+            "tkfm_dispatch_点击人员补充"
+        ],
+        "on_error": [
+            "tkfm_dispatch_点击返回图标"
+        ],
+        "timeout": 3000,
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_无推荐角色": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "确定",
+        "next": [
+            "tkfm_dispatch_点击人员补充"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_点击人员补充": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "人员补充",
+        "post_delay": 1500,
+        "next": [
+            "tkfm_dispatch_点击返回图标"
+        ]
+    },
+    "tkfm_dispatch_点击返回图标": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Base\\backup.png",
+        "next": [
+            "tkfm_dispatch_点击出发"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_点击出发": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "出发",
+        "next": [
+            "tkfm_dispatch_闲置中_选择房间2和3"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "tkfm_dispatch_退出派遣界面"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_向上滑动": {
+        "begin": [
+            596,
+            244,
+            1,
+            1
+        ],
+        "end": [
+            598,
+            736,
+            1,
+            1
+        ],
+        "action": "Swipe",
+        "pre_delay": 500,
+        "post_delay": 1500,
+        "next": [
+            "tkfm_dispatch_系统没有选择任务_随机填充任务"
+        ]
+    },
+    "tkfm_dispatch_向下滑动": {
+        "begin": [
+            598,
+            736,
+            1,
+            1
+        ],
+        "end": [
+            596,
+            244,
+            1,
+            1
+        ],
+        "action": "Swipe",
+        "pre_delay": 500,
+        "post_delay": 1500,
+        "next": [
+            "tkfm_dispatch_系统没有选择任务_随机填充任务"
+        ]
+    },
+    "tkfm_dispatch_点击关闭": {
+        "recognition": "OCR",
+        "expected": "关闭",
+        "action": "Click",
+        "timeout": 5000,
+        "next": [
+            "tkfm_dispatch_点击队伍归来"
+        ],
+        "on_error": [
+            "tkfm_dispatch_自动派遣"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_是否已经自动填充人员": {
+        "recognition": "OCR",
+        "expected": "EMPTY",
+        "action": "Click",
+        "next": [
+            "tkfm_dispatch_没有填充人员_点击填充"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "tkfm_dispatch_已经填充人员"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_已经填充人员": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "出发",
+        "next": [
+            "tkfm_dispatch_闲置中"
+        ],
+        "on_error": [
+            "tkfm_dispatch_退出派遣界面"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_没有填充人员_点击填充": {
+        "recognition": "OCR",
+        "expected": "条件推荐",
+        "action": "Click",
+        "next": [
+            "tkfm_dispatch_人员补充"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_人员补充": {
+        "recognition": "OCR",
+        "expected": "人员补充",
+        "action": "Click",
+        "next": [],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_退出派遣界面": {
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Base\\backup.png",
+        "action": "Click",
+        "next": [
+            "tkfm_dispatch_Nothing"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_派遣队伍": {
+        "recognition": "OCR",
+        "expected": "闲置中",
+        "action": "Click",
+        "next": [
+            "tkfm_dispatch_点击派遣三角形"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_Nothing": {
+        "post_delay": 1500
+    },
+    "tkfm_dispatch_自动派遣": {
+        "next": [
+            "tkfm_dispatch_看板界面"
+        ],
+        "post_delay": 1500
+    }
+}

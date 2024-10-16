@@ -1,4 +1,5 @@
 {
+    "version": "v1.5.1",
     "controller": [
         {
             "name": "安卓端",
@@ -30,26 +31,66 @@
     ],
     "task": [
         {
-            "name": "点击游戏",
-            "entry": "点击存储"
-        },
-        {
-            "name": "选项任务",
-            "entry": "MyTask2",
+            "name": "运行布魔",
+            "entry": "tkfm_StartUp_StartUpByOption",
             "option": [
-                "任务选项1"
+                "账号选择"
             ]
         },
         {
-            "name": "参数任务",
-            "entry": "MyTask3",
-            "option": [
-                "任务选项1"
-            ],
-            "pipeline_override": {}
+            "name": "自动领取好友体力",
+            "entry": "tkfm_friend_领取好友体力"
+        },
+        {
+            "name": "自动派遣",
+            "entry": "tkfm_dispatch_自动派遣"
+        },
+        {
+            "name": "自动炼金以及提交订单",
+            "entry": "tkfm_alchemhy_自动炼金以及提交订单"
+        },
+        {
+            "name": "日常任务",
+            "entry": "tkfm_daily_完成日常任务"
         }
     ],
     "option": {
+        "账号选择": {
+            "cases": [
+                {
+                    "name": "账号1",
+                    "pipeline_override": {
+                        "tkfm_StartUp_点击图标": {
+                            "index": 0
+                        }
+                    }
+                },
+                {
+                    "name": "账号2",
+                    "pipeline_override": {
+                        "tkfm_StartUp_点击图标": {
+                            "index": 1
+                        }
+                    }
+                },
+                {
+                    "name": "账号3",
+                    "pipeline_override": {
+                        "tkfm_StartUp_点击图标": {
+                            "index": 2
+                        }
+                    }
+                },
+                {
+                    "name": "账号4",
+                    "pipeline_override": {
+                        "tkfm_StartUp_点击图标": {
+                            "index": 3
+                        }
+                    }
+                }
+            ]
+        },
         "任务选项1": {
             "cases": [
                 {
