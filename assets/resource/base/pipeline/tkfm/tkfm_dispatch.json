@@ -333,6 +333,10 @@
             "tkfm_dispatch_无推荐角色",
             "tkfm_dispatch_点击人员补充"
         ],
+        "on_error": [
+            "tkfm_dispatch_点击返回图标"
+        ],
+        "timeout": 3000,
         "post_delay": 1500
     },
     "tkfm_dispatch_无推荐角色": {

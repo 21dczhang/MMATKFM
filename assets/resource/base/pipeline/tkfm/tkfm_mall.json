@@ -115,6 +115,9 @@
             "tkfm\\Mall\\交易所星之粉折扣.png",
             "tkfm\\Mall\\交易所野兽之爪折扣.png",
             "tkfm\\Mall\\交易所月光水折扣.png",
+            "tkfm\\Mall\\交易所铁锭折扣.png",
+            "tkfm\\Mall\\交易所巨兽之爪折扣.png",
+            "tkfm\\Mall\\交易所毒之粉折扣.png",
             "tkfm\\Mall\\交易所龙女碎片.png"
         ],
         "next": [
@@ -128,6 +131,7 @@
         ],
         "timeout": 3000
     },
+    "tkfm_mall_购买交易所打折潜力素材和龙女碎片_点击购买后交易许可不够": {},
     "tkfm_mall_购买交易所打折潜力素材和龙女碎片_点击购买": {
         "recognition": "OCR",
         "expected": "购买",
@@ -146,6 +150,7 @@
         "recognition": "OCR",
         "expected": "确定",
         "next": [
+            "tkfm_mall_购买交易所打折潜力素材和龙女碎片_点击购买后交易许可不够",
             "tkfm_mall_购买交易所打折潜力素材和龙女碎片"
         ],
         "on_error": [
@@ -194,7 +199,8 @@
             "tkfm\\Mall\\协会商店银币折扣.png",
             "tkfm\\Mall\\协会商店光明之石折扣.png",
             "tkfm\\Mall\\协会商店火焰之石折扣.png",
-            "tkfm\\Mall\\协会商店烈风之石折扣.png"
+            "tkfm\\Mall\\协会商店烈风之石折扣.png",
+            "tkfm\\Mall\\协会商店洪水之石折扣.png"
         ],
         "next": [
             "tkfm_mall_协会商店_购买打折银币以及打折属性石头_点击购买"

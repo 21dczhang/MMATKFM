@@ -67,7 +67,9 @@
             "tkfm_StartUp_TAP_TO_START",
             "tkfm_StartUp_点击图标"
         ],
-        "interrupt": []
+        "on_error": [
+            "tkfm_StartUp_Nothoing"
+        ]
     },
     "tkfm_StartUp_SKIP": {
         "post_delay": 1500,
@@ -189,8 +191,9 @@
         "next": [
             "tkfm_StartUp_点击图标"
         ],
-        "interrupt": [
+        "on_error": [
             "tkfm_StartUp_跳转游戏主页"
-        ]
+        ],
+        "timeout": 3000
     }
 }
