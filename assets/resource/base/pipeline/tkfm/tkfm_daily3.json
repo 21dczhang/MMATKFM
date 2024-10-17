@@ -1,0 +1,484 @@
+{
+    "tkfm_daily3_看板界面": {
+        "recognition": "DirectHit",
+        "action": "Key",
+        "key": [
+            4
+        ],
+        "next": [
+            "tkfm_daily3_返回标题提示",
+            "tkfm_daily3_看板界面"
+        ],
+        "post_delay": 1500,
+        "timeout": 5000
+    },
+    "tkfm_daily3_返回标题提示": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "取消",
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_点击任务图标"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_daily3_自动领取日常任务奖励_点击任务图标": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "roi": [
+            523,
+            46,
+            172,
+            78
+        ],
+        "template": "tkfm\\Daily\\任务奖励图标.png",
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每日任务奖励_点击每日",
+            "tkfm_daily3_自动领取日常任务奖励_领取每周任务奖励_点击每周",
+            "tkfm_daily3_自动领取日常任务奖励_领取协会任务奖励_点击协会",
+            "tkfm_daily3_自动领取日常任务奖励_领取每月任务奖励_点击每月",
+            "tkfm_daily3_自动领取日常任务奖励_领取活动任务奖励_点击活动",
+            "tkfm_daily3_自动领取日常任务奖励_领取个人任务奖励_点击个人"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每日任务奖励_点击每日": {
+        "roi": [
+            88,
+            219,
+            554,
+            119
+        ],
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "每日",
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每日任务奖励_点击每日后_点击屏幕1"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每日任务奖励_点击每日后_点击屏幕1": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每日任务奖励_点击每日后_点击屏幕2"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每日任务奖励_点击每日后_点击屏幕2": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每日任务奖励_点击每日后_点击屏幕3"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每日任务奖励_点击每日后_点击屏幕3": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每日任务奖励_点击每日后_点击屏幕4"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每日任务奖励_点击每日后_点击屏幕4": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每周任务奖励_点击每周"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每周任务奖励_点击每周": {
+        "roi": [
+            88,
+            219,
+            554,
+            119
+        ],
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "每周",
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每周任务奖励_点击每周后_点击屏幕1"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每周任务奖励_点击每周后_点击屏幕1": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每周任务奖励_点击每周后_点击屏幕2"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每周任务奖励_点击每周后_点击屏幕2": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每周任务奖励_点击每周后_点击屏幕3"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每周任务奖励_点击每周后_点击屏幕3": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每周任务奖励_点击每周后_点击屏幕4"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每周任务奖励_点击每周后_点击屏幕4": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取协会任务奖励_点击协会"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取协会任务奖励_点击协会": {
+        "roi": [
+            88,
+            219,
+            554,
+            119
+        ],
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "协会",
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取协会任务奖励_点击协会后_点击屏幕1"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取协会任务奖励_点击协会后_点击屏幕1": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取协会任务奖励_点击协会后_点击屏幕2"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取协会任务奖励_点击协会后_点击屏幕2": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取协会任务奖励_点击协会后_点击屏幕3"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取协会任务奖励_点击协会后_点击屏幕3": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取协会任务奖励_点击协会后_点击屏幕4"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取协会任务奖励_点击协会后_点击屏幕4": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每月任务奖励_点击每月"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每月任务奖励_点击每月": {
+        "roi": [
+            88,
+            219,
+            554,
+            119
+        ],
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "每月",
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每月任务奖励_点击每月后_点击屏幕1"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每月任务奖励_点击每月后_点击屏幕1": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每月任务奖励_点击每月后_点击屏幕2"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每月任务奖励_点击每月后_点击屏幕2": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每月任务奖励_点击每月后_点击屏幕3"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每月任务奖励_点击每月后_点击屏幕3": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取每月任务奖励_点击每月后_点击屏幕4"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取每月任务奖励_点击每月后_点击屏幕4": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取活动任务奖励_点击活动"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取活动任务奖励_点击活动": {
+        "roi": [
+            88,
+            219,
+            554,
+            119
+        ],
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "活动",
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取活动任务奖励_点击活动后_点击屏幕1"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取活动任务奖励_点击活动后_点击屏幕1": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取活动任务奖励_点击活动后_点击屏幕2"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取活动任务奖励_点击活动后_点击屏幕2": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取活动任务奖励_点击活动后_点击屏幕3"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取活动任务奖励_点击活动后_点击屏幕3": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取活动任务奖励_点击活动后_点击屏幕4"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取活动任务奖励_点击活动后_点击屏幕4": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取个人任务奖励_点击个人"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取个人任务奖励_点击个人": {
+        "roi": [
+            88,
+            219,
+            554,
+            119
+        ],
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "个人",
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取个人任务奖励_点击个人后_点击屏幕1"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取个人任务奖励_点击个人后_点击屏幕1": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取个人任务奖励_点击个人后_点击屏幕2"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取个人任务奖励_点击个人后_点击屏幕2": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取个人任务奖励_点击个人后_点击屏幕3"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取个人任务奖励_点击个人后_点击屏幕3": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取个人任务奖励_点击个人后_点击屏幕4"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取个人任务奖励_点击个人后_点击屏幕4": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            262,
+            1039,
+            193,
+            47
+        ],
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取完毕_返回主界面"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_领取完毕_返回主界面": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_领取完毕_返回主界面_是否主界面",
+            "tkfm_daily3_自动领取日常任务奖励_领取完毕_返回主界面"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_Nothing": {},
+    "tkfm_daily3_自动领取日常任务奖励_领取完毕_返回主界面_是否主界面": {
+        "recognition": "OCR",
+        "expected": "出征",
+        "next": [
+            "tkfm_daily3_自动领取日常任务奖励_Nothing"
+        ]
+    },
+    "tkfm_daily3_自动领取日常任务奖励_自动领取任务奖励": {
+        "next": [
+            "tkfm_daily3_看板界面"
+        ]
+    }
+}

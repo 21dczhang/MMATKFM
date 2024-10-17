@@ -50,8 +50,20 @@
             "entry": "tkfm_alchemhy_自动炼金以及提交订单"
         },
         {
-            "name": "日常任务",
-            "entry": "tkfm_daily_完成日常任务"
+            "name": "自动购买商店物品",
+            "entry": "tkfm_mall_自动购买商店物品"
+        },
+        {
+            "name": "日常任务_自动升级两次和调教三次",
+            "entry": "tkfm_daily1_完成日常任务_自动升级两次和调教三次"
+        },
+        {
+            "name": "日常任务_自动领取日常任务奖励",
+            "entry": "tkfm_daily3_自动领取日常任务奖励_自动领取任务奖励"
+        },
+        {
+            "name": "自动领取协会奖励",
+            "entry": "tkfm_association_自动领取协会奖励"
         }
     ],
     "option": {

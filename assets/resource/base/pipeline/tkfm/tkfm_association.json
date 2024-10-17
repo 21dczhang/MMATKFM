@@ -25,7 +25,7 @@
         "action": "Click",
         "recognition": "OCR",
         "expected": "协会",
-        "post_delay": 1500,
+        "post_delay": 800,
         "roi": [
             302,
             1170,
@@ -40,7 +40,7 @@
     "tkfm_association_点击650处1": {
         "action": "Click",
         "recognition": "DirectHit",
-        "post_delay": 1500,
+        "post_delay": 800,
         "target": [
             566,
             1042,
@@ -55,7 +55,7 @@
     "tkfm_association_点击650处2": {
         "action": "Click",
         "recognition": "DirectHit",
-        "post_delay": 1500,
+        "post_delay": 800,
         "target": [
             566,
             1042,
@@ -70,7 +70,7 @@
     "tkfm_association_点击650处3": {
         "action": "Click",
         "recognition": "DirectHit",
-        "post_delay": 1500,
+        "post_delay": 800,
         "target": [
             566,
             1042,
@@ -85,7 +85,7 @@
     "tkfm_association_点击650处4": {
         "action": "Click",
         "recognition": "DirectHit",
-        "post_delay": 1500,
+        "post_delay": 800,
         "target": [
             566,
             1042,
@@ -100,7 +100,7 @@
     "tkfm_association_点击650处5": {
         "action": "Click",
         "recognition": "DirectHit",
-        "post_delay": 1500,
+        "post_delay": 800,
         "target": [
             566,
             1042,
