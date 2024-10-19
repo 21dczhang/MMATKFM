@@ -13,10 +13,6 @@ def check(dirs: List[Path]) -> bool:
     print(f"Checking {len(dirs)} directories...")
 
     for dir in dirs:
-         # 修改路径
-         #if dir == Path('./assets/resource/'):
-            #dir = Path('./assets/resource/base/')
-
         print(f"Checking {dir}...")
         status = resource.post_path(dir).wait().status()
         if not status.succeeded():
