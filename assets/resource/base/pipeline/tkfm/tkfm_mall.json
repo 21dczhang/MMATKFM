@@ -55,7 +55,7 @@
         "on_error": [
             "tkfm_mall_购买交易所打折潜力素材和龙女碎片_上半部分购买完毕_往下滑"
         ],
-        "timeout": 1500
+        "timeout": 5000
     },
     "tkfm_mall_购买交易所招募命令": {
         "recognition": "TemplateMatch",
@@ -107,6 +107,8 @@
         "recognition": "TemplateMatch",
         "threshold": 0.9,
         "template": [
+            "tkfm\\Mall\\交易所初级体力药水.png",
+            "tkfm\\Mall\\交易所紧急录用证.png",
             "tkfm\\Mall\\交易所史莱姆残液折扣.png",
             "tkfm\\Mall\\交易所纯净水折扣.png",
             "tkfm\\Mall\\交易所高级合剂折扣.png",
@@ -203,7 +205,9 @@
         "action": "Click",
         "recognition": "TemplateMatch",
         "template": [
+            "tkfm\\Mall\\协会商店召唤契约.png",
             "tkfm\\Mall\\协会商店魔晶石.png",
+            "tkfm\\Mall\\协会商店阿克色记录.png",
             "tkfm\\Mall\\协会商店银币折扣.png",
             "tkfm\\Mall\\协会商店光明之石折扣.png",
             "tkfm\\Mall\\协会商店火焰之石折扣.png",
