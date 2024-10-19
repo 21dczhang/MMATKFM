@@ -44,7 +44,7 @@
     },
     "使用剩下1日的体力药水": {
         "recognition": "OCR",
-        "expected": "6日",
+        "expected": "1日",
         "timeout": 2000,
         "post_delay": 500,
         "next": [
