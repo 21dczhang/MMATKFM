@@ -1,0 +1,274 @@
+{
+    "tkfm_daily2_自动领取日常任务奖励_消耗体力_限时活动": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "限时活动",
+        "roi": [
+            88,
+            105,
+            564,
+            74
+        ],
+        "enabled": false,
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜"
+        ]
+    },
+    "tkfm_daily2_看板界面": {
+        "recognition": "DirectHit",
+        "action": "Key",
+        "key": [
+            4
+        ],
+        "next": [
+            "tkfm_daily2_返回标题提示",
+            "tkfm_daily2_看板界面"
+        ],
+        "post_delay": 1500,
+        "timeout": 5000
+    },
+    "tkfm_daily2_返回标题提示": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "取消",
+        "next": [
+            "tkfm_daily2_自动领取日常任务奖励_点击出征图标"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_daily2_自动领取日常任务奖励_点击出征图标": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "出征",
+        "roi": [
+            442,
+            829,
+            238,
+            172
+        ],
+        "next": [
+            "tkfm_daily2_自动领取日常任务奖励_消耗体力_限时活动",
+            "tkfm_daily2_自动领取日常任务奖励_消耗体力_目前活动"
+        ]
+    },
+    "tkfm_daily2_自动领取日常任务奖励_消耗体力_目前活动": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "目前活动",
+        "roi": [
+            101,
+            110,
+            530,
+            61
+        ],
+        "next": [
+            "tkfm_daily2_自动领取日常任务奖励_消耗体力_每日政务"
+        ]
+    },
+    "tkfm_daily2_自动领取日常任务奖励_消耗体力_每日政务": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\每日政务.png",
+        "roi": [
+            62,
+            648,
+            598,
+            115
+        ],
+        "next": [
+            "tkfm_daily2_自动领取日常任务奖励_消耗体力_选择副本"
+        ]
+    },
+    "tkfm_daily2_自动领取日常任务奖励_消耗体力_选择副本": {
+        "next": [
+            "tkfm_daily2_自动领取日常任务奖励_消耗体力_银币副本",
+            "tkfm_daily2_自动领取日常任务奖励_消耗体力_经验药水副本",
+            "tkfm_daily2_自动领取日常任务奖励_消耗体力_情报副本"
+        ]
+    },
+    "tkfm_daily2_自动领取日常任务奖励_消耗体力_银币副本": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\商业经营.png",
+        "threshold": 0.9,
+        "enabled": false,
+        "next": [
+            "tkfm_daily2_每日政务_选择最高体力本"
+        ]
+    },
+    "tkfm_daily2_自动领取日常任务奖励_消耗体力_经验药水副本": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\战争演习.png",
+        "threshold": 0.9,
+        "enabled": false,
+        "next": [
+            "tkfm_daily2_每日政务_选择最高体力本"
+        ]
+    },
+    "tkfm_daily2_自动领取日常任务奖励_消耗体力_情报副本": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\情报搜集.png",
+        "threshold": 0.9,
+        "enabled": false,
+        "next": [
+            "tkfm_daily2_每日政务_选择最高体力本"
+        ]
+    },
+    "tkfm_daily2_每日政务_选择最高体力本": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": [
+            "tkfm\\Daily\\银币50体力本.png",
+            "tkfm\\Daily\\药水50体力本.png",
+            "tkfm\\Daily\\情报30体力本.png"
+        ],
+        "threshold": 0.99,
+        "roi": [
+            417,
+            120,
+            188,
+            1046
+        ],
+        "next": [
+            "tkfm_daily2_每日政务_是否启用扫荡",
+            "tkfm_daily2_每日政务_开始界面_是否为日常队"
+        ]
+    },
+    "tkfm_daily2_每日政务_开始界面_是否为日常队": {
+        "next": [
+            "tkfm_daily2_每日政务_开始界面_是日常队",
+            "tkfm_daily2_每日政务_开始界面_不是日常队"
+        ]
+    },
+    "tkfm_daily2_每日政务_开始界面_是日常队": {
+        "action": "DoNothing",
+        "recognition": "OCR",
+        "expected": "日常队",
+        "roi": [
+            476,
+            648,
+            243,
+            62
+        ],
+        "next": [
+            "tkfm_daily2_每日政务_开始界面_是日常队_点击开始"
+        ]
+    },
+    "tkfm_daily2_每日政务_开始界面_不是日常队": {
+        "action": "Click",
+        "target": [
+            625,
+            862,
+            32,
+            35
+        ],
+        "recognition": "DirectHit",
+        "next": [
+            "tkfm_daily2_每日政务_开始界面_是日常队",
+            "tkfm_daily2_每日政务_开始界面_不是日常队"
+        ]
+    },
+    "tkfm_daily2_每日政务_开始界面_是日常队_点击开始": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "开始",
+        "roi": [
+            250,
+            1049,
+            213,
+            192
+        ],
+        "post_delay": 1000,
+        "timeout": 100000,
+        "next": [
+            "tkfm_daily2_每日政务_道具不足或者体力不足_返回主页",
+            "tkfm_daily2_每日政务_开始界面_是日常队_点击再次挑战"
+        ]
+    },
+    "tkfm_daily2_每日政务_开始界面_是日常队_点击再次挑战": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "再次挑战",
+        "post_delay": 1000,
+        "next": [
+            "tkfm_daily2_每日政务_道具不足或者体力不足_返回主页",
+            "tkfm_daily2_每日政务_开始界面_是日常队_点击再次挑战"
+        ]
+    },
+    "tkfm_daily2_每日政务_道具不足或者体力不足_返回主页": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "next": [
+            "tkfm_daily2_每日政务_返回主页"
+        ]
+    },
+    "tkfm_daily2_每日政务_是否启用扫荡": {
+        "next": [
+            "tkfm_daily2_每日政务_点击扫荡"
+        ],
+        "enabled": false
+    },
+    "tkfm_daily2_每日政务_点击扫荡": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "军团扫荡",
+        "roi": [
+            496,
+            1103,
+            154,
+            89
+        ],
+        "post_delay": 1000,
+        "next": [
+            "tkfm_daily2_每日政务_点击扫荡_扫荡开始",
+            "tkfm_daily2_每日政务_点击扫荡_道具不足或者体力不足_返回主页"
+        ]
+    },
+    "tkfm_daily2_每日政务_点击扫荡_扫荡开始": {
+        "recognition": "OCR",
+        "expected": "扫荡开始",
+        "action": "Click",
+        "next": [
+            "tkfm_daily2_每日政务_点击扫荡_扫荡开始_点击完成"
+        ]
+    },
+    "tkfm_daily2_每日政务_点击扫荡_扫荡开始_点击完成": {
+        "recognition": "OCR",
+        "expected": "完成",
+        "next": [
+            "tkfm_daily2_每日政务_点击扫荡"
+        ]
+    },
+    "tkfm_daily2_每日政务_点击扫荡_道具不足或者体力不足_返回主页": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "next": [
+            "tkfm_daily2_每日政务_返回主页"
+        ]
+    },
+    "tkfm_daily2_每日政务_返回主页": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "tkfm_daily2_返回主页_是否主界面",
+            "tkfm_daily2_每日政务_返回主页"
+        ]
+    },
+    "tkfm_daily2_返回主页_是否主界面": {
+        "recognition": "OCR",
+        "expected": "出征",
+        "roi": [
+            390,
+            825,
+            309,
+            329
+        ]
+    },
+    "tkfm_daily2_自动领取日常任务奖励_消耗体力": {
+        "next": [
+            "tkfm_daily2_看板界面"
+        ]
+    }
+}

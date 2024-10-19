@@ -1,0 +1,229 @@
+{
+    "tkfm_LimitedTime_activity_是否启用扫荡": {
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡"
+        ],
+        "enabled": false
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜": {
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_点击图标"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_点击图标": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\LimitedTime_Activity\\惊惧撒旦夜图标.png",
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_点击45体力副本",
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_点击图标"
+        ],
+        "post_delay": 1500
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_点击45体力副本": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\LimitedTime_Activity\\base\\45体力.png",
+        "threshold": 0.95,
+        "post_delay": 1500,
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队",
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_不是活动队"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队": {
+        "action": "DoNothing",
+        "recognition": "OCR",
+        "expected": "活动队",
+        "roi": [
+            476,
+            648,
+            243,
+            62
+        ],
+        "next": [
+            "tkfm_LimitedTime_activity_是否启用扫荡",
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击开始"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_不是活动队": {
+        "action": "Click",
+        "target": [
+            625,
+            862,
+            32,
+            35
+        ],
+        "recognition": "DirectHit",
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队",
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_不是活动队"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "军团扫荡",
+        "roi": [
+            496,
+            1103,
+            154,
+            89
+        ],
+        "post_delay": 1000,
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_点击确定",
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_点击确定": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            392,
+            688,
+            206,
+            62
+        ],
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数",
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_点击确定"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数": {
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_当前体力小于45",
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_当前体力大于等于45"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_当前体力小于45": {
+        "recognition": "OCR",
+        "expected": "-",
+        "threshold": 0.98,
+        "action": "DoNothing",
+        "roi": [
+            258,
+            708,
+            88,
+            41
+        ],
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_返回主页"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_返回主页": {
+        "action": "Key",
+        "key": 4,
+        "next": [
+            "tkfm_daily2_返回主页_是否主界面",
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_返回主页"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_当前体力大于等于45": {
+        "recognition": "OCR",
+        "expected": "-",
+        "threshold": 0.98,
+        "roi": [
+            258,
+            708,
+            88,
+            41
+        ],
+        "action": "DoNothing",
+        "inverse": true,
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_当前体力大于等于45_增加扫荡次数"
+        ],
+        "timeout": 3000,
+        "on_error": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_已达到最大次数+1_ 点击-1"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_已达到最大次数+1_ 点击-1": {
+        "roi": [
+            151,
+            534,
+            55,
+            54
+        ],
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\LimitedTime_Activity\\base\\减少次数图标.png",
+        "action": "Click",
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_选择完毕_点击扫荡开始"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_选择完毕_点击扫荡开始": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "扫荡开始",
+        "roi": [
+            390,
+            778,
+            192,
+            58
+        ],
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_返回主页"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_当前体力大于等于45_增加扫荡次数": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\LimitedTime_Activity\\base\\增加次数图标.png",
+        "roi": [
+            511,
+            534,
+            57,
+            55
+        ],
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_当前体力大于等于45"
+        ],
+        "timeout": 3000,
+        "on_error": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击扫荡后_选择免费体力的最大扫荡次数_已达到最大次数+1_ 点击-1"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击开始": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "开始",
+        "timeout": 100000,
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击开始_体力不足_返回主页",
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击开始_再次挑战"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击开始_再次挑战": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "再次挑战",
+        "roi": [
+            169,
+            1164,
+            385,
+            72
+        ],
+        "timeout": 100000,
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击开始_体力不足_返回主页",
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击开始_再次挑战"
+        ]
+    },
+    "tkfm_LimitedTime_activity_惊惧撒旦夜_开始界面_是活动队_点击开始_体力不足_返回主页": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "DoNothing",
+        "roi": [
+            116,
+            895,
+            221,
+            65
+        ],
+        "next": [
+            "tkfm_LimitedTime_activity_惊惧撒旦夜_返回主页"
+        ]
+    }
+}

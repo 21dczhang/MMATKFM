@@ -1,4 +1,16 @@
 {
+    "Temp": {
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Daily\\红点.png",
+        "roi": [
+            85,
+            220,
+            551,
+            116
+        ],
+        "action": "Click",
+        "next": []
+    },
     "点击前往下关摸鱼塔Temp": {
         "recognition": "OCR",
         "expected": "前往下关",

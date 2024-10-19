@@ -58,6 +58,13 @@
             "entry": "tkfm_daily1_完成日常任务_自动升级两次和调教三次"
         },
         {
+            "name": "日常任务_自动消耗体力",
+            "entry": "tkfm_daily2_自动领取日常任务奖励_消耗体力",
+            "option": [
+                "副本选择"
+            ]
+        },
+        {
             "name": "日常任务_自动领取日常任务奖励",
             "entry": "tkfm_daily3_自动领取日常任务奖励_自动领取任务奖励"
         },
@@ -103,21 +110,93 @@
                 }
             ]
         },
-        "任务选项1": {
+        "副本选择": {
             "cases": [
                 {
-                    "name": "文本1",
+                    "name": "限时活动45体力本——扫荡",
                     "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本1"
+                        "tkfm_LimitedTime_activity_是否启用扫荡": {
+                            "enabled": true
+                        },
+                        "tkfm_daily2_自动领取日常任务奖励_消耗体力_限时活动": {
+                            "enabled": true
                         }
                     }
                 },
                 {
-                    "name": "文本2",
+                    "name": "限时活动45体力本——Auto",
                     "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本2"
+                        "tkfm_LimitedTime_activity_是否启用扫荡": {
+                            "enabled": false
+                        },
+                        "tkfm_daily2_自动领取日常任务奖励_消耗体力_限时活动": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "日常50银币本——扫荡",
+                    "pipeline_override": {
+                        "tkfm_daily2_自动领取日常任务奖励_消耗体力_银币副本": {
+                            "enabled": true
+                        },
+                        "tkfm_daily2_每日政务_是否启用扫荡": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "日常50银币本——Auto",
+                    "pipeline_override": {
+                        "tkfm_daily2_自动领取日常任务奖励_消耗体力_银币副本": {
+                            "enabled": true
+                        },
+                        "tkfm_daily2_每日政务_是否启用扫荡": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "日常50经验本——扫荡",
+                    "pipeline_override": {
+                        "tkfm_daily2_自动领取日常任务奖励_消耗体力_经验药水副本": {
+                            "enabled": true
+                        },
+                        "tkfm_daily2_每日政务_是否启用扫荡": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "日常50经验本——Auto",
+                    "pipeline_override": {
+                        "tkfm_LimitedTime_activity_是否启用扫荡": {
+                            "enabled": false
+                        },
+                        "tkfm_daily2_自动领取日常任务奖励_消耗体力_经验药水活动": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "日常30情报本——扫荡",
+                    "pipeline_override": {
+                        "tkfm_daily2_自动领取日常任务奖励_消耗体力_情报副本": {
+                            "enabled": true
+                        },
+                        "tkfm_daily2_每日政务_是否启用扫荡": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "日常30情报本——Auto",
+                    "pipeline_override": {
+                        "tkfm_daily2_自动领取日常任务奖励_消耗体力_情报副本": {
+                            "enabled": true
+                        },
+                        "tkfm_daily2_每日政务_是否启用扫荡": {
+                            "enabled": false
                         }
                     }
                 }
