@@ -1,3 +1,31 @@
+<div align="center">
+
+# MMATKFM
+
+基于全新架构的 tkfm 小助手。图像技术 + 模拟控制，解放双手！  
+由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 强力驱动！
+
+
+</div>
+
+## 主要功能
+
+- 启动游戏
+- 自动领取好友体力
+- 自动派遣
+- 自动炼金以及提交订单
+- 自动购买商店物品
+- 自动完成日常升级和房间任务
+- 自动消耗体力
+- 自动领取日常任务奖励
+- 自动领取协会奖励
+
+
+## 注意事项
+- 自动消耗体力，必须手动配置两队，一队命名为活动队，用于打活动消耗体力；一队命名为日常队，用于刷日常本
+
+
+
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
   <img alt="LOGO" src="https://cdn.jsdelivr.net/gh/MaaAssistantArknights/design@main/logo/maa-logo_512x512.png" width="256" height="256" />
