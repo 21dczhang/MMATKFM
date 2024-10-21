@@ -76,7 +76,8 @@ jobs:
         with:  
           repository: SweetSmellFox/MFAWPF  
           filename: MFAWPF*
-          latest: true  
+          tag: "v1.2.1.5"
+#          latest: true  
           out-file-path: "MFA"  
           extract: true  
 
