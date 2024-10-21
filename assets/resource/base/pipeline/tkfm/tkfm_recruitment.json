@@ -31,6 +31,7 @@
             293,
             245
         ],
+        "post_delay": 1000,
         "next": [
             "tkfm_recruitment_跳转全境征才界面"
         ],
@@ -41,6 +42,7 @@
     "tkfm_recruitment_跳转全境征才界面_点击向左": {
         "action": "Click",
         "recognition": "DirectHit",
+        "post_delay": 1000,
         "target": [
             190,
             1132,
@@ -52,21 +54,18 @@
     "tkfm_recruitment_跳转全境征才界面": {
         "action": "Click",
         "recognition": "OCR",
-        "expected": "全境征才",
-        "roi": [
-            4,
-            1094,
-            700,
-            128
-        ],
+        "expected": "征才",
+        "post_delay": 1000,
         "next": [
-            "tkfm_recruitment_跳转全境征才界面_点击榜单1"
+            "tkfm_recruitment_跳转全境征才界面_点击榜单1",
+            "tkfm_recruitment_跳转全境征才界面"
         ]
     },
     "tkfm_recruitment_跳转全境征才界面_点击榜单1": {
         "recognition": "OCR",
         "expected": "榜单",
         "action": "Click",
+        "post_delay": 1000,
         "roi": [
             296,
             219,
@@ -83,6 +82,7 @@
     },
     "tkfm_recruitment_跳转全境征才界面_榜单1招募条件": {
         "recognition": "OCR",
+        "post_delay": 1000,
         "expected": [
             "领袖",
             "菁英"
@@ -99,6 +99,7 @@
     "tkfm_recruitment_跳转全境征才界面_退出榜单1": {
         "recognition": "OCR",
         "expected": "取消",
+        "post_delay": 1000,
         "action": "Click",
         "roi": [
             119,
@@ -152,6 +153,7 @@
         "recognition": "OCR",
         "expected": "取消",
         "action": "Click",
+        "post_delay": 1000,
         "roi": [
             119,
             1007,
