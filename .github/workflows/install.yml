@@ -85,7 +85,7 @@ jobs:
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
           cp MFA/MFAWPF.exe install/MFATKFM.exe
-          jq --arg version_name "tkfm" --arg url "https://github.com/21dczhang/MMATKFM/tree/tkfm" --arg version ${{ needs.meta.outputs.tag }} '. + {"name": $version_name, "url": $url,"version": $version}' ./assets/interface.json > ./install/interface.json
+          jq --arg version_name "tkfm" --arg url "https://github.com/21dczhang/MMATKFM" --arg version ${{ needs.meta.outputs.tag }} '. + {"name": $version_name, "url": $url,"version": $version}' ./assets/interface.json > ./install/interface.json
       
       - uses: actions/upload-artifact@v4
         with:
