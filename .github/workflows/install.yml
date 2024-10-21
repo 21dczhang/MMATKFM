@@ -75,6 +75,7 @@ jobs:
         uses: robinraju/release-downloader@v1  
         with:  
           repository: SweetSmellFox/MFAWPF  
+          filename: MFAWPF*
           tag: "1.2.1.5"
 #          latest: true  
           out-file-path: "MFA"  
