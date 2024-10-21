@@ -69,6 +69,10 @@
             "entry": "tkfm_daily3_自动领取日常任务奖励_自动领取任务奖励"
         },
         {
+            "name": "自动查看全境征才是否有领袖和菁英词条",
+            "entry": "tkfm_recruitment_自动招募"
+        },
+        {
             "name": "自动领取协会奖励",
             "entry": "tkfm_association_自动领取协会奖励"
         }

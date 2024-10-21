@@ -1,0 +1,318 @@
+{
+    "tkfm_recruitment_看板界面": {
+        "recognition": "DirectHit",
+        "action": "Key",
+        "key": [
+            4
+        ],
+        "next": [
+            "tkfm_recruitment_返回标题提示",
+            "tkfm_recruitment_看板界面"
+        ],
+        "post_delay": 1500,
+        "timeout": 5000
+    },
+    "tkfm_recruitment_返回标题提示": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "取消",
+        "next": [
+            "tkfm_recruitment_点击召唤"
+        ],
+        "timeout": 5000
+    },
+    "tkfm_recruitment_点击召唤": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "召唤",
+        "roi": [
+            403,
+            886,
+            293,
+            245
+        ],
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面"
+        ],
+        "interrupt": [
+            "tkfm_recruitment_跳转全境征才界面_点击向左"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_点击向左": {
+        "action": "Click",
+        "recognition": "DirectHit",
+        "target": [
+            190,
+            1132,
+            34,
+            48
+        ],
+        "next": []
+    },
+    "tkfm_recruitment_跳转全境征才界面": {
+        "action": "Click",
+        "recognition": "OCR",
+        "expected": "全境征才",
+        "roi": [
+            4,
+            1094,
+            700,
+            128
+        ],
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面_点击榜单1"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_点击榜单1": {
+        "recognition": "OCR",
+        "expected": "榜单",
+        "action": "Click",
+        "roi": [
+            296,
+            219,
+            129,
+            763
+        ],
+        "on_error": [
+            "tkfm_recruitment_跳转全境征才界面_退出榜单1"
+        ],
+        "timeout": 1000,
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面_榜单1招募条件"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_榜单1招募条件": {
+        "recognition": "OCR",
+        "expected": [
+            "领袖",
+            "菁英"
+        ],
+        "action": "StopTask",
+        "roi": [
+            102,
+            444,
+            524,
+            154
+        ],
+        "timeout": 1000
+    },
+    "tkfm_recruitment_跳转全境征才界面_退出榜单1": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "roi": [
+            119,
+            1007,
+            221,
+            69
+        ],
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面_点击榜单2",
+            "tkfm_recruitment_跳转全境征才界面_退出榜单1"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_点击榜单2": {
+        "recognition": "OCR",
+        "expected": "榜单",
+        "action": "Click",
+        "index": 1,
+        "on_error": [
+            "tkfm_recruitment_跳转全境征才界面_退出榜单2"
+        ],
+        "timeout": 1000,
+        "roi": [
+            296,
+            219,
+            129,
+            763
+        ],
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面_榜单2招募条件"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_榜单2招募条件": {
+        "recognition": "OCR",
+        "expected": [
+            "领袖",
+            "菁英"
+        ],
+        "action": "StopTask",
+        "roi": [
+            102,
+            444,
+            524,
+            154
+        ],
+        "timeout": 1000,
+        "on_error": [
+            "tkfm_recruitment_跳转全境征才界面_退出榜单2"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_退出榜单2": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "roi": [
+            119,
+            1007,
+            221,
+            69
+        ],
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面_点击榜单3",
+            "tkfm_recruitment_跳转全境征才界面_退出榜单2"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_点击榜单3": {
+        "recognition": "OCR",
+        "expected": "榜单",
+        "action": "Click",
+        "index": 2,
+        "on_error": [
+            "tkfm_recruitment_跳转全境征才界面_退出榜单3"
+        ],
+        "timeout": 1000,
+        "roi": [
+            296,
+            219,
+            129,
+            763
+        ],
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面_榜单3招募条件"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_榜单3招募条件": {
+        "recognition": "OCR",
+        "expected": [
+            "领袖",
+            "菁英"
+        ],
+        "action": "StopTask",
+        "roi": [
+            102,
+            444,
+            524,
+            154
+        ],
+        "timeout": 1000,
+        "on_error": [
+            "tkfm_recruitment_跳转全境征才界面_退出榜单3"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_退出榜单3": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "roi": [
+            119,
+            1007,
+            221,
+            69
+        ],
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面_点击榜单4",
+            "tkfm_recruitment_跳转全境征才界面_退出榜单3"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_点击榜单4": {
+        "recognition": "OCR",
+        "index": 3,
+        "expected": "榜单",
+        "action": "Click",
+        "timeout": 1000,
+        "on_error": [
+            "tkfm_recruitment_跳转全境征才界面_榜单4_刷新次数"
+        ],
+        "roi": [
+            296,
+            219,
+            129,
+            763
+        ],
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面_榜单4招募条件"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_榜单4招募条件": {
+        "recognition": "OCR",
+        "expected": [
+            "领袖",
+            "菁英"
+        ],
+        "action": "StopTask",
+        "roi": [
+            102,
+            444,
+            524,
+            154
+        ],
+        "timeout": 1000,
+        "on_error": [
+            "tkfm_recruitment_跳转全境征才界面_榜单4_刷新次数"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_榜单4_刷新次数": {
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": "tkfm\\Recruitment\\全境征才_刷新次数.png",
+        "roi": [
+            556,
+            610,
+            84,
+            69
+        ],
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面_榜单4招募条件",
+            "tkfm_recruitment_跳转全境征才界面_榜单4_刷新次数",
+            "tkfm_recruitment_跳转全境征才界面_榜单4_刷新次数不足"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_榜单4_刷新次数不足": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "action": "DoNothing",
+        "roi": [
+            229,
+            661,
+            315,
+            108
+        ],
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面_返回主界面"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_退出榜单4": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "roi": [
+            119,
+            1007,
+            221,
+            69
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_返回主界面": {
+        "action": "Key",
+        "key": 4,
+        "recognition": "DirectHit",
+        "next": [
+            "tkfm_recruitment_跳转全境征才界面_返回主界面_是否主界面",
+            "tkfm_recruitment_跳转全境征才界面_返回主界面"
+        ]
+    },
+    "tkfm_recruitment_跳转全境征才界面_返回主界面_是否主界面": {
+        "recognition": "OCR",
+        "expected": "出征",
+        "next": [
+            "tkfm_recruitment_Nothing"
+        ]
+    },
+    "tkfm_recruitment_Nothing": {},
+    "tkfm_recruitment_自动招募": {
+        "next": [
+            "tkfm_recruitment_看板界面"
+        ]
+    }
+}
