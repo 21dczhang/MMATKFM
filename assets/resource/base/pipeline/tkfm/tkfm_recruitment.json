@@ -87,7 +87,8 @@
             "领袖",
             "菁英"
         ],
-        "action": "StopTask",
+        "action": "DoNothing",
+        "next": [],
         "roi": [
             102,
             444,
@@ -137,7 +138,8 @@
             "领袖",
             "菁英"
         ],
-        "action": "StopTask",
+        "action": "DoNothing",
+        "next": [],
         "roi": [
             102,
             444,
@@ -190,7 +192,8 @@
             "领袖",
             "菁英"
         ],
-        "action": "StopTask",
+        "action": "DoNothing",
+        "next": [],
         "roi": [
             102,
             444,
@@ -242,7 +245,8 @@
             "领袖",
             "菁英"
         ],
-        "action": "StopTask",
+        "action": "DoNothing",
+        "next": [],
         "roi": [
             102,
             444,
