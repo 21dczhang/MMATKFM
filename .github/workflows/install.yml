@@ -40,9 +40,6 @@ jobs:
 
           # branch=${GITHUB_REF#refs/heads/}
 
-          # # 为标签添加前缀
-          # tag_prefix=${branch}
-          # tag="$tag_prefix-$tag"
 
           if ! $($is_release) ; then
             prefix=${tag%-*-*}
@@ -213,3 +210,4 @@ jobs:
         with:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
+          name: "${{ needs.meta.outputs.tag }} - Release Date: ${{ format('YYYY-MM-dd', github.event.repository.pushed_at) }}"
