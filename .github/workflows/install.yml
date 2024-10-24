@@ -33,15 +33,10 @@ jobs:
           if [[ $tag != v* ]]; then
             tag=$(curl -sX GET "https://api.github.com/repos/${{ github.repository }}/releases/latest" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | awk '/tag_name/{print $4}' FS='["]')
             if [[ $tag != v* ]]; then
-              tag="v0.0.0"
-            fi
-            tag=$(date "+$tag-%y%m%d-$(git rev-parse --short HEAD)")
-          fi
 
-          # branch=${GITHUB_REF#refs/heads/}
+          branch=$(git name-rev --name-only ${{ github.ref }})
 
-
-          if ! $($is_release) ; then
+          if ! $is_release ; then
             prefix=${tag%-*-*}
             suffix=${tag#$prefix-}
             tag="$prefix-ci.$suffix"
@@ -49,9 +44,11 @@ jobs:
 
           echo tag=$tag | tee -a $GITHUB_OUTPUT
           echo is_release=$is_release | tee -a $GITHUB_OUTPUT
+          echo branch=$branch | tee -a $GITHUB_OUTPUT
     outputs:
       tag: ${{ steps.set_tag.outputs.tag }}
       is_release: ${{ steps.set_tag.outputs.is_release }}
+      branch: ${{ steps.set_tag.outputs.branch }}
 
   windows:
     needs: meta
@@ -210,4 +207,4 @@ jobs:
         with:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
-          name: "${{ github.ref_name }}-${{ needs.meta.outputs.tag }}"  # 分支名称加上版本号作为标题
+          name: "${{ needs.meta.outputs.branch }}-${{ needs.meta.outputs.tag }}"  # 分支名称加上版本号作为标题
