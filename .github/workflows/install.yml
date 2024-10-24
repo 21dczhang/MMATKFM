@@ -20,27 +20,30 @@ on:
   workflow_dispatch:
 
 jobs:
-meta:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - id: set_tag
-      run: |
-        is_release=${{ startsWith(github.ref, 'refs/tags/v') }}
-        tag=$(git describe --tags --match "v*" ${{ github.ref }})
-        if [[ $tag != v* ]]; then
-          tag=$(curl -sX GET "https://api.github.com/repos/${{ github.repository }}/releases/latest" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | awk '/tag_name/{print $4}' FS='["]')
+  meta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: set_tag
+        run: |
+          is_release=${{ startsWith(github.ref, 'refs/tags/v') }}
+          tag=$(git describe --tags --match "v*" ${{ github.ref }} || true)
           if [[ $tag != v* ]]; then
-            tag="v0.0.0" # Fallback tag if no tag is found
+            tag=$(curl -sX GET "https://api.github.com/repos/${{ github.repository }}/releases/latest" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | awk '/tag_name/{print $4}' FS='["]')
+            if [[ $tag != v* ]]; then
+              branch=$(git name-rev --name-only ${{ github.ref }})
+              if ! $is_release ; then
+                prefix=${tag%-*-*}
+                suffix=${tag#$prefix-}
+                tag="$prefix-ci.$suffix"
+              fi
+            fi
           fi
-        fi
-        # Manually set the branch name to NIKKE
-        branch="NIKKE"
-        echo tag=$tag | tee -a $GITHUB_OUTPUT
-        echo is_release=$is_release | tee -a $GITHUB_OUTPUT
-        echo branch=$branch | tee -a $GITHUB_OUTPUT
+          echo tag=$tag | tee -a $GITHUB_OUTPUT
+          echo is_release=$is_release | tee -a $GITHUB_OUTPUT
+          echo branch=$branch | tee -a $GITHUB_OUTPUT
     outputs:
       tag: ${{ steps.set_tag.outputs.tag }}
       is_release: ${{ steps.set_tag.outputs.is_release }}
@@ -172,6 +175,8 @@ meta:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
     needs: [meta, windows, ubuntu, macos, android]
     runs-on: ubuntu-latest
+    env:
+      GameName: "Nikke"  # 定义全局变量Nikke
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -179,10 +184,12 @@ meta:
       - run: |
           cd assets
           for f in *; do
-            (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
+            # 使用${{ env.GameName}}替换MMA
+            new_name=$(echo $f | sed "s/MMA/MMA-${{ env.GameName }}/")
+            (cd $f && zip -r ../$new_name-${{ needs.meta.outputs.tag }}.zip .)
           done
       - uses: softprops/action-gh-release@v2
         with:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
-          name: "${{ needs.meta.outputs.branch }}-${{ needs.meta.outputs.tag }}"
+          name: "${{ env.GameName}}-${{ needs.meta.outputs.tag }}"
