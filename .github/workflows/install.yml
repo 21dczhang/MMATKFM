@@ -33,15 +33,14 @@ jobs:
           if [[ $tag != v* ]]; then
             tag=$(curl -sX GET "https://api.github.com/repos/${{ github.repository }}/releases/latest" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | awk '/tag_name/{print $4}' FS='["]')
             if [[ $tag != v* ]]; then
-
-          branch=$(git name-rev --name-only ${{ github.ref }})
-
-          if ! $is_release ; then
-            prefix=${tag%-*-*}
-            suffix=${tag#$prefix-}
-            tag="$prefix-ci.$suffix"
+              branch=$(git name-rev --name-only ${{ github.ref }})
+              if ! $is_release ; then
+                prefix=${tag%-*-*}
+                suffix=${tag#$prefix-}
+                tag="$prefix-ci.$suffix"
+              fi
+            fi
           fi
-
           echo tag=$tag | tee -a $GITHUB_OUTPUT
           echo is_release=$is_release | tee -a $GITHUB_OUTPUT
           echo branch=$branch | tee -a $GITHUB_OUTPUT
@@ -57,12 +56,10 @@ jobs:
       matrix:
         arch: [aarch64, x86_64]
       fail-fast: false
-
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: true
-
       - name: Download MaaFramework
         uses: robinraju/release-downloader@v1
         with:
@@ -71,26 +68,23 @@ jobs:
           latest: true
           out-file-path: "deps"
           extract: true
-
-      - name: Download MFAWPF  
-        uses: robinraju/release-downloader@v1  
-        with:  
-          repository: SweetSmellFox/MFAWPF  
+      - name: Download MFAWPF
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: SweetSmellFox/MFAWPF
           filename: MFAWPF*
-          latest: true  
-          out-file-path: "MFA"  
-          extract: true  
-
+          latest: true
+          out-file-path: "MFA"
+          extract: true
       - name: Install
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
           cp MFA/MFAWPF.exe install/MFANIKKE.exe
           jq --arg version_name "tkfm" --arg url "https://github.com/21dczhang/MMATKFM" --arg version ${{ needs.meta.outputs.tag }} '. + {"name": $version_name, "url": $url,"version": $version}' ./assets/interface.json > ./install/interface.json
-      
       - uses: actions/upload-artifact@v4
         with:
-          name: MMATKFM-win-${{ matrix.arch }}
+          name: MMA-${{ needs.meta.outputs.branch }}-win-${{ matrix.arch }}
           path: "install"
 
   ubuntu:
@@ -100,12 +94,10 @@ jobs:
       matrix:
         arch: [aarch64, x86_64]
       fail-fast: false
-
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: true
-
       - name: Download MaaFramework
         uses: robinraju/release-downloader@v1
         with:
@@ -114,15 +106,13 @@ jobs:
           latest: true
           out-file-path: "deps"
           extract: true
-
       - name: Install
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
-
       - uses: actions/upload-artifact@v4
         with:
-          name: MMATKFM-linux-${{ matrix.arch }}
+          name: MMA-${{ needs.meta.outputs.branch }}-linux-${{ matrix.arch }}
           path: "install"
 
   macos:
@@ -132,12 +122,10 @@ jobs:
       matrix:
         arch: [aarch64, x86_64]
       fail-fast: false
-
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: true
-
       - name: Download MaaFramework
         uses: robinraju/release-downloader@v1
         with:
@@ -146,15 +134,13 @@ jobs:
           latest: true
           out-file-path: "deps"
           extract: true
-
       - name: Install
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
-
       - uses: actions/upload-artifact@v4
         with:
-          name: MMATKFM-macos-${{ matrix.arch }}
+          name: MMA-${{ needs.meta.outputs.branch }}-macos-${{ matrix.arch }}
           path: "install"
 
   android:
@@ -164,12 +150,10 @@ jobs:
       matrix:
         arch: [aarch64, x86_64]
       fail-fast: false
-
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: true
-
       - name: Download MaaFramework
         uses: robinraju/release-downloader@v1
         with:
@@ -178,15 +162,13 @@ jobs:
           latest: true
           out-file-path: "deps"
           extract: true
-
       - name: Install
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
-
       - uses: actions/upload-artifact@v4
         with:
-          name: MMATKFM-android-${{ matrix.arch }}
+          name: MMA-${{ needs.meta.outputs.branch }}-android-${{ matrix.arch }}
           path: "install"
 
   release:
@@ -197,7 +179,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: assets
-
       - run: |
           cd assets
           for f in *; do
@@ -207,4 +188,4 @@ jobs:
         with:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
-          name: "${{ needs.meta.outputs.branch }}-${{ needs.meta.outputs.tag }}"  # 分支名称加上版本号作为标题
+          name: "${{ needs.meta.outputs.branch }}-${{ needs.meta.outputs.tag }}"
