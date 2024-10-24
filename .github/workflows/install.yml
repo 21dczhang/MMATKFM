@@ -38,11 +38,11 @@ jobs:
             tag=$(date "+$tag-%y%m%d-$(git rev-parse --short HEAD)")
           fi
 
-          branch=${GITHUB_REF#refs/heads/}
+          # branch=${GITHUB_REF#refs/heads/}
 
-          # 为标签添加前缀
-          tag_prefix=${branch}
-          tag="$tag_prefix-$tag"
+          # # 为标签添加前缀
+          # tag_prefix=${branch}
+          # tag="$tag_prefix-$tag"
 
           if ! $($is_release) ; then
             prefix=${tag%-*-*}
