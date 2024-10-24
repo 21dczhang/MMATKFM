@@ -210,4 +210,4 @@ jobs:
         with:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
-          name: "${{ needs.meta.outputs.tag }} - Release Date: ${{ format('YYYY-MM-dd', github.event.repository.pushed_at) }}"
+          name: "${{ github.ref_name }}-${{ needs.meta.outputs.tag }}"  # 分支名称加上版本号作为标题
